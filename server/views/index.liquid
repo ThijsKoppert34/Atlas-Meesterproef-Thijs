@@ -2,21 +2,12 @@
 
 {% block content %}
 
-  <h1>Atlas Personen</h1>
+  <h2>Straten</h2>
+  <div class="straat-knoppen">
+    {% for straat in straten %}
+      <a href="/{{ straat | urlencode }}" class="straat-knop">{{ straat }}</a>
+    {% endfor %}
+  </div>
 
-  {% if personen.size > 0 %}
-    <ul>
-      {% for persoon in personen %}
-        <li>
-          <strong>ID:</strong>
-          {{ persoon.id }} <br>
-          <strong>Naam:</strong>
-          {{ persoon.first_name }}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>Geen personen gevonden.</p>
-  {% endif %}
 
 {% endblock %}
