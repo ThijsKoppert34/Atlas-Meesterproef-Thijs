@@ -16,6 +16,8 @@ app.set('view engine', 'liquid');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/client', express.static(path.join(__dirname, '../client')));
+
 // Route
 app.get('/', async (req, res) => {
   try {
