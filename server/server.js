@@ -1,58 +1,35 @@
-import { App } from '@tinyhttp/app';
-import { logger } from '@tinyhttp/logger';
+import express from 'express';
+import fetch from 'node-fetch'; // of global fetch bij Node 18+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const app = express();
+
+// Setup voor Liquid
 import { Liquid } from 'liquidjs';
-import sirv from 'sirv';
+const engine = new Liquid();
+app.engine('liquid', engine.express());
+app.set('views', './server/views');
+app.set('view engine', 'liquid');
 
-const data = {
-  'beemdkroon': {
-    id: 'beemdkroon',
-    name: 'Beemdkroon',
-    image: {
-      src: 'https://i.pinimg.com/736x/09/0a/9c/090a9c238e1c290bb580a4ebe265134d.jpg',
-      alt: 'Beemdkroon',
-      width: 695,
-      height: 1080,
-    }
-  },
-  'wilde-peen': {
-    id: 'wilde-peen',
-    name: 'Wilde Peen',
-    image: {
-      src: 'https://mens-en-gezondheid.infonu.nl/artikel-fotos/tom008/4251914036.jpg',
-      alt: 'Wilde Peen',
-      width: 418,
-      height: 600,
-    }
-  }
-}
+// Static bestanden
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const engine = new Liquid({
-  extname: '.liquid',
-});
-
-const app = new App();
-
-app
-  .use(logger())
-  .use('/', sirv('dist'))
-  .listen(3000, () => console.log('Server available on http://localhost:3000'));
-
+// Route
 app.get('/', async (req, res) => {
-  return res.send(renderTemplate('server/views/index.liquid', { title: 'Home', items: Object.values(data) }));
-});
+  try {
+    const response = await fetch('https://fdnd-agency.directus.app/items/atlas_person/');
+    const json = await response.json();
+    const personen = json.data;
 
-app.get('/plant/:id/', async (req, res) => {
-  const id = req.params.id;
-  const item = data[id];
-  if (!item) {
-    return res.status(404).send('Not found');
+    res.render('index', { personen });
+  } catch (err) {
+    res.status(500).send('Fout bij ophalen van API');
   }
-  return res.send(renderTemplate('server/views/detail.liquid', {
-    title: `Detail page for ${id}`,
-    item: item
-  }));
 });
 
-const renderTemplate = (template, data) => {
-  return engine.renderFileSync(template, data);
-};
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server draait op http://localhost:${port}`);
+});
