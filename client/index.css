@@ -9,13 +9,29 @@
 /* component styling */
 @import '../server/components/card/card.css';
 
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-gray-10: #111111;
+  --color-gray-20: #222222;
+  --color-gray-30: #444444;
+  --color-gray-40: #666666;
+  --color-gray-50: #888888;
+  --color-gray-60: #aaaaaa;
+  --color-gray-70: #cccccc;
+  --color-gray-80: #eeeeee;
+
+  --color-blue: #4682b4;
+}
+
 body {
-  color: black;
+  color: var(--color-black);
   max-width: 1440px;
   margin: 0 auto;
   background-image: url('/images/background.jpg');
 }
 
 main {
-  padding: 1rem;
+  /* padding: 1rem; */
 }
