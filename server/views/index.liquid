@@ -9,5 +9,44 @@
     {% endfor %}
   </div>
 
+  <div class="map-wrapper">
+    <svg
+      class="overlay"
+      viewBox="0 0 300 200"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      preserveAspectRatio="xMinYMin meet">
+
+
+      <image
+        href="/client/public/images/map (2).svg"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%" />
+
+
+      {% assign eerste_straat = straten[0] %}
+      <a
+        class="link-vrolik straat-link"
+        href="/{{ eerste_straat | urlencode }}"
+        data-straat="{{ eerste_straat }}">
+        <path class="straat-path" d="M 96.52 49.50 L 92.15 51.56 L 91.55 51.85 L 85.63 54.55 L 77.45 58.40 L 76.98 58.66 L 76.45 59.10 L 74.89 59.80 L 74.07 59.94 L 57.94 67.36 L 57.64 67.57 L 57.21 67.89 L 55.11 68.84 L 54.65 69.02 L 53.96 69.18 L 53.33 69.48 L 36.50 77.42 L 35.00 78.10 L 34.48 78.19 L 29.97 80.39 L 28.93 80.63" />
+      </a>
+
+      {% assign tweede_straat = straten[1] %}
+      <a
+        class="link-beuken straat-link"
+        href="/{{ tweede_straat | urlencode }}"
+        data-straat="{{ tweede_straat }}">
+        <path class="straat-path" d="M 130.5 90.0 L 120.0 94.0 L 119.1 94.4 L 97.3 104.2 L 94.8 105.3 L 70.8 115.4 L 66.5 117.3" />
+      </a>
+    </svg>
+    <div
+      id="tooltip"
+      class="tooltip"
+      style="display: none;"></div>
+  </div>
+
 
 {% endblock %}
