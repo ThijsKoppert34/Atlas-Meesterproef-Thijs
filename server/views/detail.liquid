@@ -1,8 +1,46 @@
 {% layout "server/layouts/base.liquid" %}
 
 {% block content %}
-<h1>
-    {{ straatnaam }} {{ huisnummer }} {{ toevoeging }}
-</h1>
+{% comment %} STRAAT {% endcomment %}
+<section>
+<h1>{{ straatnaam }} {{ huisnummer }} {{ toevoeging }}</h1>
 <p>Familie van Nerden</p>
+</section>
+
+{% comment %} HUIS EN INTRODUCTIE MENSEN {% endcomment %}
+<section>
+    <p>In 1926 trouwde Emile in de Nieuwe Synagoge met Ali.</p>
+    <p>Emile en Alide kregen een zoon en een dochter: Philly Willy (1931) en Sonja Flory (1933)</p>
+    <p>In juli 1940 kwamen beide moeders bij het echtpaar in huis wonen</p>
+</section>
+
+{% comment %} TANDARTS {% endcomment %}
+<section>
+    <p>In mei 1941 mocht Emile niet langer niet-Joodse patiënten behandelen.</p>
+</section>
+
+{% comment %} ONDERDUIKEN {% endcomment %}
+<section>
+    <p>In de zomer van 1943 duikt de familie onder op de Paulus Potterstraat</p>
+{% comment %} KELDER {% endcomment %}
+
+{% comment %} BLACK SCREEN {% endcomment %}
+ <p>Op 24 augustus 1943 werden Emile en Alida opgepakt door de Jodenjagers Gerrit Mozer en Pieter Schaap</p>
+ <p>Op 7 september 1943 arriveren Emile en Alide in Westerbork.</p>
+ <p>Phily werd later opgepakt,m maar kwam tegelijk met zijn ouders in Westerbork terecht.</p>
+ <p>Sara's verblijfplaats is onduidelijk, maar ook zij reist met hun naar Auschwitz.</p>
+</section>
+
+{% comment %} AFVOEREN EN HERDENKING {% endcomment %}
+<section>
+    {% comment %} DE AFVOERING {% endcomment %}
+     <p>Ze worden nog dezelfde dag op de trein naar Auschwitz gezet. Hier worden zij na aankomst direct door vergassing om het leven gebracht.</p>
+
+     {% comment %} DATUMS {% endcomment %}
+      <p>Emilie Fritz Nerden <br> 13-12-1898 - 10-09-1942 (44 jaar)</p>
+      <p>Alide Nerden-Ansel <br> 12-10-1905 - 10-09-1942 (37 jaar)</p>
+      <p>Phily Willy Nerden <br> 14-06-1931 - 10-09-1942 (12 jaar)</p>
+      <p>Sara Ansel-Cok <br> 01-01-1871 - 10-09-1943 (72 jaar)</p>
+      <p>Sonja Flory Nerden <br> overleefde de oorlog als enigste</p>
+     </section>
 {% endblock %}
