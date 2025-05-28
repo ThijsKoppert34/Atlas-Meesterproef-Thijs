@@ -25,6 +25,9 @@ body:has(#sidebar-toggle:checked) main {
 
   .sidebar-content {
     margin: 1rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
 
     h3 {
       padding-bottom: 1rem;
@@ -70,8 +73,7 @@ body:has(#sidebar-toggle:checked) .toggle-button svg {
 }
 
 .content {
-  margin: 1rem;
-  max-height: 80vh;
+
   overflow-y: hidden;
 }
 
