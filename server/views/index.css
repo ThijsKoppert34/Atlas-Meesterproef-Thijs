@@ -4,4 +4,157 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+.inleiding{
+  padding: 1rem;
+}
 
+.inleiding h1{
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.inleiding p{
+  margin-top: 1rem;
+  font-size: 1.5em;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: auto;
+}
+
+.link-vrolik {
+transform: translate(5px, -55px);
+}
+
+.link-vrolik path{
+  transform: scale(2.9);
+  stroke-width: 1.6;
+}
+
+.link-beuken {
+  transform: translate(27.5px, -31px); /* Pas eventueel aan voor juiste positionering */
+
+}
+
+.link-beuken path{
+  transform: scale(2.5);
+  stroke-width: 2.5;
+}
+
+.link-eiken{
+  transform: translate(-3px, -61px);
+}
+
+.link-eiken path{
+  transform: scale(3);
+  stroke-width: 1.5;
+}
+
+.link-boerhaave{
+  transform: translate(3px, -59.5px);
+}
+
+.link-boerhaave path{
+  transform: scale(3);
+  stroke-width: 1.5;
+}
+
+.link-ooster {
+  transform: translate(13px, -136px) rotate(1deg); /* Pas eventueel aan voor juiste positionering */
+}
+
+.link-ooster path{
+  transform: scale(2);
+  stroke-width: 2.5;
+}
+
+.link-derde-oost{
+  transform: translate(4px, -54.5px);
+
+}
+
+.link-derde-oost path{
+  transform: scale(2.9);
+  stroke-width: 1.6;
+}
+
+.link-tweede-oost{
+  transform: translate(4px, -54.5px);
+
+}
+
+.link-tweede-oost path{
+  transform: scale(2.9);
+  stroke-width: 1.6;
+}
+
+
+.link-camper{
+  transform: translate(4.5px, -54.5px);
+
+}
+
+.link-camper path{
+  transform: scale(2.9);
+  stroke-width: 1.6;
+}
+
+
+.link-kastanje{
+  transform: translate(-3.5px, -59.7px);
+
+}
+
+.link-kastanje path{
+  transform: scale(3);
+  stroke-width: 1.8;
+}
+
+
+
+
+
+
+.straat-path {
+  stroke: #4682b4;
+  fill: none;
+  transform-origin: top left;
+  transition: stroke 0.3s ease;
+}
+
+.straat-path:hover {
+  stroke: #6ab9fb;
+}
+
+
+.straat-link {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip zelf */
+
+.tooltip {
+  position: absolute;
+  background: white;
+  color: black;
+  padding: 4px 8px;
+  font-size: 2em;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+image{
+  object-fit: cover;
+  object-position: bottom;
+}
