@@ -1,0 +1,28 @@
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+/* p{
+    font-size: 50rem;
+} */
+
+.spacer{
+      height: 100vh;
+}
+
+.box{
+    width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.scene1{
+    position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
+}

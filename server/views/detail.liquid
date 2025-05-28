@@ -1,10 +1,15 @@
 {% layout "server/layouts/base.liquid" %}
 
 {% block content %}
+
+{% comment %} <link rel="stylesheet" href="/detail.css"> {% endcomment %}
 {% comment %} STRAAT {% endcomment %}
-<section>
+ <section>
+
+<section class="scene1">
 <h1>{{ straatnaam }} {{ huisnummer }} {{ toevoeging }}</h1>
 <p>Familie van Nerden</p>
+<img src="/client/SVG/Housegood1.svg" alt="" class="box">
 </section>
 
 {% comment %} HUIS EN INTRODUCTIE MENSEN {% endcomment %}
@@ -43,4 +48,15 @@
       <p>Sara Ansel-Cok <br> 01-01-1871 - 10-09-1943 (72 jaar)</p>
       <p>Sonja Flory Nerden <br> overleefde de oorlog als enigste</p>
      </section>
+
+      <ruimte class="spacer"> </ruimte>
+
+      </section>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="/client/detailPage.js"></script>
+     <script>
+        gsap.registerPlugin(ScrollTrigger);
+     </script>
 {% endblock %}

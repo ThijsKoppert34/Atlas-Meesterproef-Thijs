@@ -1,3 +1,3 @@
 import './index.css';
-
-console.log('Hello, world!');
+import './detailPage.js';
+// console.log('Hello, world!');
