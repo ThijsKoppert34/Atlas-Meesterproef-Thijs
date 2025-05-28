@@ -23,7 +23,9 @@
 
     </header>
     <main>
-      <aside class="sidebar">
+      
+
+      {% comment %} <aside class="sidebar">
 
         <div class="sidebar-content">
           <h3 class="h3">Filters</h3>
@@ -62,8 +64,8 @@
             </fieldset>
           </form>
         </div>
-      </aside> {% endcomment %}
-{% comment %} 
+      </aside>
+
       <div>
         <input
           type="checkbox"
@@ -82,9 +84,9 @@
             stroke-linejoin="round"
             class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
         </label>
-      </div>
+      </div> {% endcomment %}
 
-      <section class="content"> {% endcomment %}
+      <section class="content">
         {% block content %}
         {% endblock %}
       </section>
