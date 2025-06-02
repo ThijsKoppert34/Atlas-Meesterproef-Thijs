@@ -2,6 +2,7 @@
 section{
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /* p{
@@ -13,16 +14,50 @@ section{
 }
 
 .box{
-    width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  position: relative;
+    width: 15dvw;
+    height: 45dvh;
+    position: absolute;
+    left: 43dvw;
+    z-index: 1;
+        transform-origin: bottom center;
+    top: 20%;
 }
 
 .scene1{
     position: relative;
   width: 100dvw;
   height: 100dvh;
+      transform-origin: bottom center;
+
   overflow: hidden;
   background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.skyline1{
+    fill: url(#grad1);
+    position: absolute;
+    width: 50dvw;
+    left: 0;
+    top: 15%
+}
+
+.skyline2{
+    fill: url(#grad1);
+    position: absolute;
+    width: 50dvw;
+    left: 50dvw;
+    top: 15%
+}
+
+.adress{
+position: relative;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.family{
+position: relative;
+    text-align: center;
+    font-size: 2rem;
 }

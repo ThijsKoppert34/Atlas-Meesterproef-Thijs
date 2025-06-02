@@ -10,8 +10,8 @@ header {
 
 /* main */
 main {
-  display: grid;
-  grid-template-columns: minmax(15rem, 15rem) auto 1fr;
+  /* display: grid; */
+  /* grid-template-columns: minmax(15rem, 15rem) auto 1fr; */
   transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
 }
 
