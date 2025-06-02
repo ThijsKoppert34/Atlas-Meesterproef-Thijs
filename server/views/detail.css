@@ -2,62 +2,112 @@
 section{
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+  overflow: hidden;
 }
 
-/* p{
-    font-size: 50rem;
-} */
-
-.spacer{
-      height: 100vh;
-}
-
-.box{
+.house{
     width: 15dvw;
     height: 45dvh;
     position: absolute;
     left: 43dvw;
+    transform-origin: bottom center;
     z-index: 1;
-        transform-origin: bottom center;
     top: 20%;
 }
 
-.scene1{
+.scene-1{
     position: relative;
   width: 100dvw;
   height: 100dvh;
-      transform-origin: bottom center;
-
   overflow: hidden;
   background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
 }
 
-.skyline1{
+.skyline-1{
     fill: url(#grad1);
     position: absolute;
     width: 50dvw;
     left: 0;
-    top: 15%
+    top: 15%;
+    z-index: -1;
 }
 
-.skyline2{
+.skyline-2{
     fill: url(#grad1);
     position: absolute;
     width: 50dvw;
     left: 50dvw;
-    top: 15%
+    top: 15%;
+    z-index: -1;
 }
 
 .adress{
 position: relative;
     text-align: center;
     font-size: 3rem;
-    padding: 1rem;
+    padding: .5rem;
+  z-index: 2;
+  mix-blend-mode: exclusion;
+  color: white;
 }
 
 .family{
 position: relative;
     text-align: center;
     font-size: 2rem;
+  padding: 0;
+  z-index: 2;
 }
+
+.tree{
+  position: absolute;
+  width: 15dvw;
+}
+.tree-1{
+  top: 45%;
+  left: 20%;
+}
+
+.tree-2{
+  top: 45%;
+  left: 65%;
+}
+
+.bike{
+  position: absolute;
+  width: 5dvw;
+  top: 55%;
+  left: 40%;
+}
+
+.cloud{
+  z-index: -3;
+  position: absolute;
+  width: 15dvw;
+}
+
+.cloud-1{
+  width: 15dvw;
+  left: 50%;
+}
+
+.cloud-2{
+  width: 10dvw;
+  left: 75%;
+  top: 10%;
+}
+
+.cloud-3{
+  width: 7dvw;
+  left: 20%;
+  top: 5%;
+}
+
+.scene-2{
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #7f7f7f;
+background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 20px, #7f7f7f 20px, #7f7f7f );
+background-size: 40px 100%;
+}
+
