@@ -15,10 +15,82 @@
 
   <body>
     <header>
+
+
+      <img
+        class="logo"
+        src="/client/public/images/logo.avif"
+        alt="Logo">
+
+
     </header>
     <main>
-      {% block content %}
-      {% endblock %}
+
+      <aside class="sidebar">
+
+        <div class="sidebar-content">
+          <h3 class="h3">Filters</h3>
+          <form action="">
+            <fieldset>
+              <legend>Straat</legend>
+              <ul>
+                <li>
+                  <label><input type="checkbox" value="Beukenweg" /> Beukenweg</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Boerhaaveplein" /> Boerhaaveplein</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Camperstraat" /> Camperstraat</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Derde Oosterparkstraat" /> Derde Oosterparkstraat</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Eikenweg" /> Eikenweg</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Kastanjeplein" /> Kastanjeplein</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Oosterpark" /> Oosterpark</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Tweede Oosterparkstraat" /> Tweede Oosterparkstraat</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="Vrolikstraat" /> Vrolikstraat</label>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+        </div>
+      </aside>
+
+      <div>
+        <input
+          type="checkbox"
+          id="sidebar-toggle"
+          hidden>
+        <label for="sidebar-toggle" class="toggle-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+        </label>
+      </div>
+
+      <section class="content">
+        {% block content %}
+        {% endblock %}
+      </section>
     </main>
     <footer>
     </footer>

@@ -24,34 +24,104 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/client', express.static(path.join(__dirname, '../client')));
 app.use(express.static(path.join(__dirname, '../dist')));
 
+
+const jsonAdress = 'https://fdnd-agency.directus.app/items/atlas_address/';
+const jsonPerson = 'https://fdnd-agency.directus.app/items/atlas_person/';
+const jsonPoster = 'https://fdnd-agency.directus.app/items/atlas_poster/';
+const jsonFamily = 'https://fdnd-agency.directus.app/items/atlas_family/';
+
+
+
+
+
 // Route
 app.get('/', async (req, res) => {
   try {
-    const response = await fetch('https://fdnd-agency.directus.app/items/atlas_person/');
-    const json = await response.json();
-    const personen = json.data;
+    const [personRes, addressRes] = await Promise.all([
+      fetch(jsonPerson),
+      fetch(jsonAdress)
+    ]);
 
-    res.render('index', {
-      personen
-    });
+    const personen = (await personRes.json()).data;
+    const adressen = (await addressRes.json()).data;
+
+    const straten = [...new Set(
+      adressen
+        .map(adres => adres.street?.trim()) // trim spaties
+        .filter(Boolean) // filter lege of undefined waarden
+    )];
+
+    res.render('index', { personen, straten });
+
   } catch (err) {
+    console.error(err);
     res.status(500).send('Fout bij ophalen van API');
   }
 });
 
-app.get('/street', async (req, res) => {
+app.get('/:straatnaam', async (req, res) => {
   try {
-    const response = await fetch('https://fdnd-agency.directus.app/items/atlas_person/');
-    const json = await response.json();
-    const personen = json.data;
+    const straatnaam = req.params.straatnaam.trim();
 
-    res.render('street', {
-      personen
+    const [addressRes, personRes] = await Promise.all([
+      fetch(jsonAdress),
+      fetch(jsonPerson)
+    ]);
+
+    const adressen = (await addressRes.json()).data;
+    const personen = (await personRes.json()).data;
+
+    // Filter adressen op straatnaam
+    const gefilterdeAdressen = adressen.filter(adres => adres.street?.trim() === straatnaam);
+
+    const uniekeAdressen = [];
+
+const bestaandeCombinaties = new Set();
+
+for (const adres of gefilterdeAdressen) {
+  const combinatie = `${adres.street}-${adres.house_number}-${adres.addition ?? ''}`;
+  if (!bestaandeCombinaties.has(combinatie)) {
+    bestaandeCombinaties.add(combinatie);
+    uniekeAdressen.push(adres);
+  }
+}
+
+uniekeAdressen.sort((a, b) => {
+  // Eerst sorteren op huisnummer
+  if (a.house_number !== b.house_number) {
+    return a.house_number - b.house_number;
+  }
+
+  // Daarna optioneel op addition als die er is (alfabetisch)
+  const additionA = a.addition || '';
+  const additionB = b.addition || '';
+  return additionA.localeCompare(additionB);
+});
+
+
+
+    // IDs van de adressen in die straat
+    const adresIds = gefilterdeAdressen.map(adres => adres.id);
+
+    // Personen die op die adressen wonen
+    const personenInStraat = personen.filter(persoon =>
+      adresIds.includes(persoon.address_id)
+    );
+
+    res.render('straat', {
+      straatnaam,
+      personen: personenInStraat,
+      adressen: uniekeAdressen // gebruik de gefilterde lijst zonder duplicaten
     });
+    
   } catch (err) {
-    res.status(500).send('Fout bij ophalen van API');
+    console.error(err);
+    res.status(500).send('Fout bij ophalen van straatpagina');
   }
 });
+
+
+
 
 const port = 3000;
 app.listen(port, () => {
