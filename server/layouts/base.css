@@ -1,7 +1,9 @@
 /* header */
 header {
   padding: 1rem;
-  background-color: var(--color-blue);
+
+  background-color: brown;
+
 }
 
 .logo {
