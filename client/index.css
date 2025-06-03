@@ -5,6 +5,7 @@
 /*.layout and view styling */
 @import '../server/layouts/base.css';
 @import '../server/views/index.css';
+@import '../server/views/street.css';
 
 /* component styling */
 @import '../server/components/card/card.css';
@@ -13,9 +14,8 @@ body {
   color: black;
   max-width: 1440px;
   margin: 0 auto;
-  background-image: url('/images/background.jpg');
 }
 
 main {
-  padding: 1rem;
+  padding: 1rem 0;
 }
