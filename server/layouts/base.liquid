@@ -5,6 +5,9 @@
     {% block head %}
       <title>{{ title }}</title>
     {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <link rel="stylesheet" href="/index.css">
     <script src="/index.js" defer></script>
     {% block styles %}
@@ -92,7 +95,6 @@
         {% endblock %}
       </section>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
   </body>
 </html>

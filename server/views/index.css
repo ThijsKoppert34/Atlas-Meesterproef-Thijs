@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -8,10 +12,6 @@
   padding: 1rem;
 }
 
-.inleiding h1{
-  font-weight: bold;
-  font-size: 2rem;
-}
 
 .inleiding p{
   margin-top: 1rem;
@@ -157,4 +157,94 @@ transform: translate(5px, -55px);
 image{
   object-fit: cover;
   object-position: bottom;
+}
+
+
+
+
+
+
+/* intro */
+
+
+h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 6rem);
+  font-weight: bold;
+  font-family: "Merienda", cursive;
+  text-align: center;
+  margin: 0 0 1rem 0; /* <-- dit voegt onderruimte toe */
+}
+
+.overlay-screen {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #737c85;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.overlay-screen svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.overlay-screen svg path{
+    stroke-width: 3;
+}
+
+.story {
+  z-index: 1;
+  max-width: 40em;
+  text-align: center;
+  color: white;
+  font-family: "Noto Serif", serif;
+}
+
+.story-step {
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.story-step.active {
+  display: block;
+}
+
+.button-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #3c4a55;
+  color: white;
+  font-family: "Merienda", cursive;
+  font-size: 1.1em;
+  border: 2px solid white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: #3c4a55;
+  border-color: #3c4a55;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }

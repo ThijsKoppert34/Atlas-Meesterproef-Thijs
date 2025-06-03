@@ -49,3 +49,36 @@ links.forEach(link => {
   });
 });
 
+
+gsap.from('svg path', {
+  drawSVG: 0,
+  duration: 30,
+  ease: "power1.inOut",
+});
+
+
+
+const steps = document.querySelectorAll('.story-step');
+const overlay = document.getElementById('story-overlay');
+let currentStep = 0;
+
+function showStep(index) {
+  steps.forEach(step => step.classList.remove('active'));
+  steps[index].classList.add('active');
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep(currentStep);
+  } else {
+    overlay.style.display = 'none'; // verberg overlay
+  }
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (currentStep > 0) {
+    currentStep--;
+    showStep(currentStep);
+  }
+});
