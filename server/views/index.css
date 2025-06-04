@@ -2,6 +2,107 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
 
 
+main {
+  display: grid;
+  grid-template-columns: minmax(15rem, 15rem) auto 1fr;
+  transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
+}
+
+body:has(#sidebar-toggle:checked) main {
+  grid-template-columns: minmax(0rem, 0rem) auto 1fr;
+}
+
+
+.sidebar {
+  background-color: var(--color-gray-30);
+  color: var(--color-white);
+
+  .sidebar-content {
+    margin: 1rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+
+    h3 {
+      padding-bottom: 1rem;
+    }
+    
+    form {
+      legend {
+        padding-bottom: 0.5rem;
+      }
+
+      ul {
+        display:flex;
+        flex-direction: column;
+      }
+  
+      li {
+        padding: 0.5rem 3.5rem 0.5rem 0;
+        white-space: nowrap;
+  
+        label {
+          cursor: pointer;
+
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+          border: 1px solid var(--color-gray-50);
+          border-radius: 0.5em;
+          background-color: var(--color-gray-20);
+          padding: 0.5em;
+          display: inline-block; /* Zorgt dat transform en scale goed werken */
+          transition: all 0.3s ease-in-out; /* Vloeiender animatie */
+        }
+        
+        a:hover {
+          transform: scale(1.1);
+          background-color: var(--color-gray-80);
+          color: var(--color-gray-20); /* Let op: zorg dat --color bestaat in je root! */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtiele schaduw voor diepte */
+        }
+      }
+    }
+    
+  }
+
+}
+
+.toggle-button {
+  background: var(--color-gray-20);
+  cursor: pointer;
+  height: 100%;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+
+  svg {
+    transition: transform 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: rotate(180deg);
+  }
+}
+
+body:has(#sidebar-toggle:checked) .toggle-button svg {
+  transform: rotate(0deg);
+}
+
+.content {
+
+  overflow-y: hidden;
+}
+
+/* footer */
+footer {
+  padding: 1rem;
+}
+
+
+
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -201,7 +302,7 @@ h1 {
 }
 
 .overlay-screen svg path{
-    stroke-width: 3;
+    stroke-width: 6;
 }
 
 .story {
