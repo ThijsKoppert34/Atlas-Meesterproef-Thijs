@@ -50,7 +50,7 @@ links.forEach(link => {
 });
 
 
-gsap.from('svg path', {
+gsap.from('svg[aria-label="introSVG"] path', {
   drawSVG: 0,
   duration: 30,
   ease: "power1.inOut",
