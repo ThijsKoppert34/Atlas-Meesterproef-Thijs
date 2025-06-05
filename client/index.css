@@ -10,6 +10,8 @@
 /* component styling */
 @import '../server/components/card/card.css';
 
+/*  */
+@import '../server/views/detail.css';
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
