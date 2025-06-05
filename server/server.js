@@ -59,6 +59,40 @@ app.get('/', async (req, res) => {
   }
 });
 
+
+import fs from 'fs/promises';
+
+app.get('/verhaal/:naam', async (req, res) => {
+  try {
+    const naam = decodeURIComponent(req.params.naam);
+
+    const storyPath = path.join(__dirname, '../client/public/story.json');
+    const rawData = await fs.readFile(storyPath, 'utf-8');
+    const storyData = JSON.parse(rawData);
+
+    const persoon = storyData.personen.find(p => p.naam === naam);
+
+    if (!persoon) {
+      return res.status(404).send('Persoon niet gevonden');
+    }
+
+    res.render('generic', {
+      naam: persoon.naam,
+      familie: persoon.familie,
+      beroep: persoon.beroep,
+      verhaal: persoon.verhaal
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Fout bij ophalen van verhaal');
+  }
+});
+
+
+
+
+
 app.get('/:straatnaam', async (req, res) => {
  
   const straatnaam = req.params.straatnaam;
