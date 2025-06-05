@@ -1,19 +1,24 @@
 import express from 'express';
 import fetch from 'node-fetch'; // of global fetch bij Node 18+
 import path from 'path';
-import { fileURLToPath } from 'url';
+import {
+  fileURLToPath
+} from 'url';
 
 const app = express();
 
 // Setup voor Liquid
-import { Liquid } from 'liquidjs';
+import {
+  Liquid
+} from 'liquidjs';
 const engine = new Liquid();
 app.engine('liquid', engine.express());
 app.set('views', './server/views');
 app.set('view engine', 'liquid');
 
 // Static bestanden
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(
+  import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/client', express.static(path.join(__dirname, '../client')));
@@ -24,6 +29,7 @@ const jsonAdress = 'https://fdnd-agency.directus.app/items/atlas_address/';
 const jsonPerson = 'https://fdnd-agency.directus.app/items/atlas_person/';
 const jsonPoster = 'https://fdnd-agency.directus.app/items/atlas_poster/';
 const jsonFamily = 'https://fdnd-agency.directus.app/items/atlas_family/';
+
 
 
 
@@ -46,6 +52,7 @@ app.get('/', async (req, res) => {
     )];
 
     res.render('index', { personen, straten });
+
   } catch (err) {
     console.error(err);
     res.status(500).send('Fout bij ophalen van API');
