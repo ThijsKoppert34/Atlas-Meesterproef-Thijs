@@ -112,9 +112,27 @@ position: relative;
   
   .house{
     width: 15dvh;
-text-align: center;
     left: 35dvw;
     top: 30%;
+}
+
+.tree{
+  top: 48%;
+  width: 25dvw
+}
+
+.tree-1{
+  left: 5%;
+}
+
+.tree-2{
+  left: 75%;
+}
+
+.bike{
+  width: 15dvw;
+  top: 60%;
+  left: 23%;
 }
 }
 
