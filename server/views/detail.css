@@ -1,0 +1,148 @@
+section{
+    display: flex;
+    flex-direction: column;
+  overflow: hidden;
+}
+
+.house{
+    width: 15dvw;
+    height: 45dvh;
+    left: 43%;
+/*     transform-origin: bottom center; */
+    z-index: 1;
+    top: 20%;
+}
+
+.scene-1{
+    position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
+  
+  > * {
+    position: absolute;
+  }
+}
+
+.skyline{
+  fill: url(#grad1);
+  width: 50dvw;
+  z-index: -1;
+  top: 15%;
+}
+
+.skyline-1{
+    left: 0;
+}
+
+.skyline-2{
+    left: 50dvw;
+}
+
+.adress{
+position: relative;
+    text-align: center;
+    font-size: 3rem;
+    padding: .5rem;
+  z-index: 2;
+  mix-blend-mode: exclusion;
+  color: white;
+}
+
+.family{
+position: relative;
+    text-align: center;
+    font-size: 2rem;
+  padding: 0;
+  z-index: 2;
+}
+
+.tree{
+  width: 15dvw;
+  top: 45%;
+}
+.tree-1{
+  left: 20%;
+}
+
+.tree-2{
+  left: 65%;
+}
+
+.bike{
+  width: 5dvw;
+  top: 55%;
+  left: 40%;
+}
+
+.cloud{
+  z-index: -3;
+  width: 15dvw;
+}
+
+.cloud-1{
+  width: 15dvw;
+  left: 50%;
+}
+
+.cloud-2{
+  width: 10dvw;
+  left: 75%;
+  top: 10%;
+}
+
+.cloud-3{
+  width: 7dvw;
+  left: 20%;
+  top: 5%;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  body{
+    color: green;
+  }
+  .skyline{
+    width: 40dvh;
+    top: 25%;
+}
+  
+  .house{
+    width: 15dvh;
+    left: 35dvw;
+    top: 30%;
+}
+
+.tree{
+  top: 48%;
+  width: 25dvw
+}
+
+.tree-1{
+  left: 5%;
+}
+
+.tree-2{
+  left: 75%;
+}
+
+.bike{
+  width: 15dvw;
+  top: 60%;
+  left: 23%;
+}
+}
+
+.scene-1-transition{
+background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f );
+background-size: 160px 100%;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 10;
+  left: 0%;
+  top: 0%;
+  opacity: 0;
+}

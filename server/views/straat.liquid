@@ -11,9 +11,11 @@
       {% for adres in adressen %}
         <div class="huis">
           <h3>{{ adres.title }}</h3>
+    <a href="/{{ straatnaam | url_encode }}/{{ adres.house_number }}">
           <p>Adres: {{ straatnaam }} {{ adres.house_number }}{% if adres.addition %}
               {{ adres.addition }}{% endif %}
           </p>
+          </a>
         </div>
       {% endfor %}
     </div>
