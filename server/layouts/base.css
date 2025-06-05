@@ -1,7 +1,6 @@
 /* header */
 header {
   padding: 1rem;
-
   background-color: var(--color-blue);
 }
 
@@ -20,11 +19,65 @@ body:has(#sidebar-toggle:checked) main {
   grid-template-columns: minmax(0rem, 0rem) auto 1fr;
 }
 
+.sidebar {
+  background-color: var(--color-gray-30);
+  color: var(--color-white);
 
-  background-color: #737c85;
+  .sidebar-content {
+    margin: 1rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+
+    h3 {
+      padding-bottom: 1rem;
+    }
+    
+    form {
+      legend {
+        padding-bottom: 0.5rem;
+      }
+  
+      li {
+        padding: 0.5rem 3.5rem 0.5rem 0;
+        white-space: nowrap;
+  
+        label {
+          cursor: pointer;
+        }
+      }
+    }
+    
+  }
 
 }
 
-.logo {
-  width: 8rem;
+.toggle-button {
+  background: var(--color-gray-20);
+  cursor: pointer;
+  height: 100%;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+
+  svg {
+    transition: transform 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: rotate(180deg);
+  }
+}
+
+body:has(#sidebar-toggle:checked) .toggle-button svg {
+  transform: rotate(0deg);
+}
+
+.content {
+
+  overflow-y: hidden;
+}
+
+/* footer */
+footer {
+  padding: 1rem;
 }
