@@ -1,42 +1,11 @@
 /* header */
 header {
   padding: 1rem;
-
-  background-color: var(--color-blue);
-}
-
-.logo {
-  width: 8rem;
-}
-
-
-/* main */
-main {
-  /* display: grid; */
-  /* grid-template-columns: minmax(15rem, 15rem) auto 1fr; */
-  transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
-}
-
-body:has(#sidebar-toggle:checked) main {
-  grid-template-columns: minmax(0rem, 0rem) auto 1fr;
-}
-
-
+ 
   background-color: #737c85;
-
-/* main */
-main {
-  /* display: grid; */
-  /* grid-template-columns: minmax(15rem, 15rem) auto 1fr; */
-  transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
+ 
 }
-
-body:has(#sidebar-toggle:checked) main {
-  grid-template-columns: minmax(0rem, 0rem) auto 1fr;
-}
-
-
-
+ 
 .logo {
   width: 8rem;
 }

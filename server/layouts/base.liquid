@@ -6,6 +6,7 @@
       <title>{{ title }}</title>
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+ 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <link rel="stylesheet" href="/index.css">
     <script src="/index.js" defer></script>
@@ -14,23 +15,21 @@
     {% block scripts %}
     {% endblock %}
   </head>
-
+ 
   <body>
     <header>
-
-
+ 
+ 
       <img
         class="logo"
         src="/client/public/images/logo.avif"
         alt="Logo">
-
-
+ 
+ 
     </header>
     <main>
-      
-
-
-
+ 
+ 
       {% block content %}
       {% endblock %}
     </main>
