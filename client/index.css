@@ -1,6 +1,7 @@
 /* global styles */
 @import 'reset.css';
 @import "typography.css";
+@import '../server/views/detail.css';
  
 /*.layout and view styling */
 @import '../server/layouts/base.css';
