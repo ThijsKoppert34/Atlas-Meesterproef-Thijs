@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
 
+body:has(#sidebar-toggle:checked) .grid-wrapper {
+  grid-template-columns: minmax(0rem, 0rem) auto 1fr;
+}
 
-main {
+.grid-wrapper {
   display: grid;
   grid-template-columns: minmax(15rem, 15rem) auto 1fr;
   transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
 }
-
-body:has(#sidebar-toggle:checked) main {
-  grid-template-columns: minmax(0rem, 0rem) auto 1fr;
-}
-
 
 .sidebar {
   background-color: var(--color-gray-30);
@@ -26,24 +24,23 @@ body:has(#sidebar-toggle:checked) main {
     h3 {
       padding-bottom: 1rem;
     }
-    
+
     form {
       legend {
         padding-bottom: 0.5rem;
       }
 
       ul {
-        display:flex;
+        display: flex;
         flex-direction: column;
       }
-  
+
       li {
         padding: 0.5rem 3.5rem 0.5rem 0;
         white-space: nowrap;
-  
+
         label {
           cursor: pointer;
-
         }
 
         a {
@@ -56,18 +53,18 @@ body:has(#sidebar-toggle:checked) main {
           display: inline-block; /* Zorgt dat transform en scale goed werken */
           transition: all 0.3s ease-in-out; /* Vloeiender animatie */
         }
-        
+
         a:hover {
           transform: scale(1.1);
           background-color: var(--color-gray-80);
-          color: var(--color-gray-20); /* Let op: zorg dat --color bestaat in je root! */
+          color: var(
+            --color-gray-20
+          ); /* Let op: zorg dat --color bestaat in je root! */
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtiele schaduw voor diepte */
         }
       }
     }
-    
   }
-
 }
 
 .toggle-button {
@@ -91,7 +88,6 @@ body:has(#sidebar-toggle:checked) .toggle-button svg {
 }
 
 .content {
-
   overflow-y: hidden;
 }
 
@@ -100,21 +96,17 @@ footer {
   padding: 1rem;
 }
 
-
-
-
 .grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.inleiding{
+.inleiding {
   padding: 1rem;
 }
 
-
-.inleiding p{
+.inleiding p {
   margin-top: 1rem;
   font-size: 1.5em;
 }
@@ -130,38 +122,40 @@ footer {
 }
 
 .link-vrolik {
-transform: translate(5px, -55px);
+  transform: translate(5px, -55px);
 }
 
-.link-vrolik path{
+.link-vrolik path {
   transform: scale(2.9);
   stroke-width: 1.6;
 }
 
 .link-beuken {
-  transform: translate(27.5px, -31px); /* Pas eventueel aan voor juiste positionering */
-
+  transform: translate(
+    27.5px,
+    -31px
+  ); /* Pas eventueel aan voor juiste positionering */
 }
 
-.link-beuken path{
+.link-beuken path {
   transform: scale(2.5);
   stroke-width: 2.5;
 }
 
-.link-eiken{
+.link-eiken {
   transform: translate(-3px, -61px);
 }
 
-.link-eiken path{
+.link-eiken path {
   transform: scale(3);
   stroke-width: 1.5;
 }
 
-.link-boerhaave{
+.link-boerhaave {
   transform: translate(3px, -59.5px);
 }
 
-.link-boerhaave path{
+.link-boerhaave path {
   transform: scale(3);
   stroke-width: 1.5;
 }
@@ -170,57 +164,46 @@ transform: translate(5px, -55px);
   transform: translate(13px, -136px) rotate(1deg); /* Pas eventueel aan voor juiste positionering */
 }
 
-.link-ooster path{
+.link-ooster path {
   transform: scale(2);
   stroke-width: 2.5;
 }
 
-.link-derde-oost{
+.link-derde-oost {
   transform: translate(4px, -54.5px);
-
 }
 
-.link-derde-oost path{
+.link-derde-oost path {
   transform: scale(2.9);
   stroke-width: 1.6;
 }
 
-.link-tweede-oost{
+.link-tweede-oost {
   transform: translate(4px, -54.5px);
-
 }
 
-.link-tweede-oost path{
+.link-tweede-oost path {
   transform: scale(2.9);
   stroke-width: 1.6;
 }
 
-
-.link-camper{
+.link-camper {
   transform: translate(4.5px, -54.5px);
-
 }
 
-.link-camper path{
+.link-camper path {
   transform: scale(2.9);
   stroke-width: 1.6;
 }
 
-
-.link-kastanje{
+.link-kastanje {
   transform: translate(-3.5px, -59.7px);
-
 }
 
-.link-kastanje path{
+.link-kastanje path {
   transform: scale(3);
   stroke-width: 1.8;
 }
-
-
-
-
-
 
 .straat-path {
   stroke: #4682b4;
@@ -232,7 +215,6 @@ transform: translate(5px, -55px);
 .straat-path:hover {
   stroke: #6ab9fb;
 }
-
 
 .straat-link {
   position: relative;
@@ -255,18 +237,12 @@ transform: translate(5px, -55px);
   transition: opacity 0.2s ease;
 }
 
-image{
+image {
   object-fit: cover;
   object-position: bottom;
 }
 
-
-
-
-
-
 /* intro */
-
 
 h1 {
   font-size: clamp(2rem, 5vw + 1rem, 6rem);
@@ -301,8 +277,8 @@ h1 {
   opacity: 0.3;
 }
 
-.overlay-screen svg path{
-    stroke-width: 6;
+.overlay-screen svg path {
+  stroke-width: 6;
 }
 
 .story {
@@ -338,7 +314,7 @@ button {
   border: 2px solid white;
   border-radius: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -347,8 +323,9 @@ button:hover {
   color: #3c4a55;
   border-color: #3c4a55;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 .uitgelicht{
   padding: 2em;

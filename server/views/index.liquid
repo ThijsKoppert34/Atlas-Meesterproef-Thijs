@@ -2,7 +2,11 @@
 
 {% block content %}
 
-  <aside class="sidebar">
+<div class="grid-wrapper">
+  
+<aside class="sidebar">
+
+
 
     <div class="sidebar-content">
       <h3 class="h3">De straten</h3>
@@ -10,14 +14,15 @@
         <fieldset>
           <ul>
             {% for straat in straten %}
-              <li>
-                <a href="/{{ straat | urlencode }}">{{ straat }}</a>
-              </li>
+            <li>
+              <a href="/{{ straat | urlencode }}">{{ straat }}</a>
+            </li>
             {% endfor %}
           </ul>
         </fieldset>
       </form>
     </div>
+
   </aside>
 
   <div>
@@ -337,6 +342,7 @@
       </ul>
 
     </section>
+</div>
 
 
   {% endblock %}
