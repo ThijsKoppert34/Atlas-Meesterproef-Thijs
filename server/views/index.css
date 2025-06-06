@@ -350,10 +350,11 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
+.uitgelicht{
+  padding: 2em;
+}
 
+.uitgelicht h2{
+  font-size: 3em;
 
-
-
-
-
-
+}
