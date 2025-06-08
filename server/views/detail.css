@@ -1,126 +1,107 @@
-section{
-    display: flex;
-    flex-direction: column;
+section {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
-.house{
-    width: 15dvw;
-    height: 45dvh;
-    left: 43%;
-/*     transform-origin: bottom center; */
-    z-index: 1;
-    top: 20%;
+.house {
+  width: 15dvw;
+  height: 45dvh;
+  left: 43%;
+  /*     transform-origin: bottom center; */
+  z-index: 1;
+  top: 20%;
 }
 
-.scene-1{
-    position: relative;
+.scene-1 {
+  position: relative;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
   background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
-  
-  > * {
+
+  >* {
     position: absolute;
   }
 }
 
-.skyline{
+.skyline {
   fill: url(#grad1);
   width: 50dvw;
   z-index: -1;
   top: 15%;
 }
 
-.skyline-1{
-    left: 0;
+.skyline-1 {
+  left: 0;
 }
 
-.skyline-2{
-    left: 50dvw;
+.skyline-2 {
+  left: 50dvw;
 }
 
-.adress{
-position: relative;
-    text-align: center;
-    font-size: 3rem;
-    padding: .5rem;
+.adress {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  padding: .5rem;
   z-index: 2;
   mix-blend-mode: exclusion;
   color: white;
 }
 
-.family{
-position: relative;
-    text-align: center;
-    font-size: 2rem;
+.family {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
   padding: 0;
   z-index: 2;
 }
 
-.tree{
+.tree {
   width: 15dvw;
   top: 45%;
 }
-.tree-1{
+
+.tree-1 {
   left: 20%;
 }
 
-.tree-2{
+.tree-2 {
   left: 65%;
 }
 
-.bike{
+.bike {
   width: 5dvw;
   top: 55%;
   left: 40%;
 }
 
-.cloud{
+.cloud {
   z-index: -3;
   width: 15dvw;
 }
 
-.cloud-1{
+.cloud-1 {
   width: 15dvw;
   left: 50%;
 }
 
-.cloud-2{
+.cloud-2 {
   width: 10dvw;
   left: 75%;
   top: 10%;
 }
 
-.cloud-3{
+.cloud-3 {
   width: 7dvw;
   left: 20%;
   top: 5%;
 }
 
-
-
-
-@media screen and (max-width: 600px) {
-  body{
-    color: green;
-  }
-  .skyline{
-    width: 40dvh;
-    top: 25%;
-}
-  
-  .house{
-    width: 15dvh;
-text-align: center;
-    left: 35dvw;
-    top: 30%;
-}
-}
-
-.scene-1-transition{
-background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f );
-background-size: 160px 100%;
+.scene-1-transition {
+  background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f);
+  background-size: 160px 100%;
   width: 100dvw;
   height: 100dvh;
   z-index: 10;
@@ -128,3 +109,268 @@ background-size: 160px 100%;
   top: 0%;
   opacity: 0;
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    color: green;
+  }
+
+  .skyline {
+    width: 40dvh;
+    top: 25%;
+  }
+
+  .house {
+    width: 15dvh;
+    text-align: center;
+    left: 35dvw;
+    top: 30%;
+  }
+
+  .tree {
+    top: 48%;
+    width: 25dvw
+  }
+
+  .tree-1 {
+    left: 5%;
+  }
+
+  .tree-2 {
+    left: 75%;
+  }
+
+  .bike {
+    width: 15dvw;
+    top: 60%;
+    left: 23%;
+  }
+}
+
+.scene-2 {
+  position: relative;
+  width: 100dvw;
+  height: 900dvh;
+  background-color: #7f7f7f;
+  background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f);
+  background-size: 160px 100%;
+}
+
+.scene-2-wedding {
+  position: relative;
+  top: 25dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+.chandelier {
+  position: absolute;
+  left: 42%;
+}
+
+.wedding-text {
+  position: relative;
+  text-align: center;
+  top: 85dvh;
+  font-size: 3rem;
+}
+
+.bride {
+  position: relative;
+  height: 40dvh;
+  width: auto;
+  left: 40%;
+  top: 35dvh;
+  transform-origin: bottom center;
+}
+
+.groom {
+  position: relative;
+  height: 40dvh;
+  width: auto;
+  left: 45%;
+  top: 35dvh;
+  transform-origin: bottom center;
+}
+
+.floor {
+  position: relative;
+  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 80%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+  /*   top: 40dvh; */
+  top: 25dvh;
+  width: 100dvw;
+  height: 10dvh;
+}
+
+.woman {
+  position: relative;
+  height: 35dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.baby {
+  position: relative;
+  height: 10dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+
+}
+
+.child-boy {
+  position: relative;
+  height: 20dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+
+}
+
+.man {
+  position: relative;
+  height: 40dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.children-text {
+  position: relative;
+  text-align: center;
+  top: 75dvh;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin: 2rem;
+}
+
+.grandma-1 {
+  position: relative;
+  height: 35dvh;
+  width: auto;
+  left: 30%;
+  top: 30dvh;
+}
+
+.ground-level {
+  /*     display: flex; */
+  /*     position: relative; */
+  /*     top: 25dvh; */
+  /*   left: 50%; */
+  /*     flex-direction: row; */
+  /*     align-items: flex-end; */
+}
+
+.floor-2 {
+  top: 10dvh;
+}
+
+.scene-2-children {
+  position: relative;
+  top: 50dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+
+
+
+.scene-2-grandmas{
+  position: relative;
+    top: 125dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+.woman-2{
+height: 35dvh;
+    width: auto;
+    left: 0%;
+  top: 30dvh;
+}
+
+.floor-3{
+  top: 20dvh;
+}
+
+.grandma-text {
+  position: relative;
+  text-align: center;
+  top: 75dvh;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .chandelier {
+    left: 30%;
+    width: 20dvh;
+  }
+
+  .wedding-text {
+    font-size: 2rem;
+    top: 70dvh;
+    line-height: 2.5rem;
+  }
+
+  .bride {
+    height: 20dvh;
+    left: 30%;
+  }
+
+  .groom {
+    height: 20dvh;
+    left: 40%;
+  }
+
+  .woman {
+    height: 20dvh;
+    top: 15dvh;
+
+  }
+
+  .man {
+    height: 25dvh;
+    top: 15dvh;
+  }
+
+  .baby {
+    height: 5dvh;
+    top: 15dvh;
+
+  }
+
+  .child-boy {
+    height: 15dvh;
+    top: 15dvh;
+
+  }
+
+  .children-text {
+    top: 60dvh;
+    font-size: 1.5rem;
+  }
+
+  .floor-2 {
+    top: 5dvh;
+  }
+
+
+  .woman-2{
+    top: 25dvh;
+  }
+
+  .grandma-1 {
+    height: 20dvh;
+    top: 25dvh;
+    left: 10%;
+  }
+
+  .floor-3{
+    top: 16dvh;
+  }
+}
+
