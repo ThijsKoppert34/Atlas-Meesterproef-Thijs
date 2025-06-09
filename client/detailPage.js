@@ -122,3 +122,29 @@ gsap.timeline({
     },
     0
   );
+
+
+  gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".scene-3",
+      start: "top top",
+      end: "+=1200vh",
+      pin: ".ground-4",
+      scrub: 2,
+      markers: true,
+    },
+  })
+.fromTo(".dentist-text-1", {x:"-150vw"}, {
+    x: 0, duration: 0.3,
+  }, 0)
+.fromTo(".dentist-text-2", {x:"-150vw"}, {
+    x: 0, duration: 0.3,
+  }, 0.3)
+.fromTo(".dentist-text-3", {x:"-150vw"}, {
+    x: 0, duration: 0.3,
+  }, .6)
+.fromTo(".customer:nth-child(-n+4)", {x:"-150vw"}, {x: 0, duration: 0.3,}, 0.1)
+.fromTo(".customer:nth-child(n+5)", {x:"-150vw"}, {x: 0, duration: 0.3,}, 0.4)
+  .set(".customer:nth-child(n+2)", { scaleX: -1, duration: 0.05 }, .7)
+.fromTo(".customer:nth-child(n+2)", {x:0}, {x: "-150vw", duration: 0.3,}, 0.75)

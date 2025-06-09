@@ -171,7 +171,7 @@ section {
 .wedding-text {
   position: relative;
   text-align: center;
-  top: 85dvh;
+  top: 35dvh;
   font-size: 3rem;
 }
 
@@ -240,7 +240,7 @@ section {
 .children-text {
   position: relative;
   text-align: center;
-  top: 75dvh;
+  top: 15dvh;
   font-size: 3rem;
   line-height: 3rem;
   margin: 2rem;
@@ -298,7 +298,7 @@ height: 35dvh;
 .grandma-text {
   position: relative;
   text-align: center;
-  top: 75dvh;
+  top: 20dvh;
   font-size: 3rem;
   line-height: 3rem;
   margin: 2rem;
@@ -312,7 +312,7 @@ height: 35dvh;
 
   .wedding-text {
     font-size: 2rem;
-    top: 70dvh;
+    top: 30dvh;
     line-height: 2.5rem;
   }
 
@@ -350,7 +350,7 @@ height: 35dvh;
   }
 
   .children-text {
-    top: 60dvh;
+    top: 5dvh;
     font-size: 1.5rem;
   }
 
@@ -374,3 +374,45 @@ height: 35dvh;
   }
 }
 
+.scene-3 {
+  position: relative;
+  width: 100dvw;
+  height: 300dvh;
+  background-color: #7f7f7f;
+background-image:  linear-gradient(#bbbbbb 8px, transparent 8px), linear-gradient(to right, #bbbbbb 8px, #7f7f7f 8px);
+background-size: 140px 140px;
+
+}
+
+.dentist-text {
+  position: relative;
+  text-align: center;
+  top: 100dvh;
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+.floor-4{
+  top: 0dvh;
+}
+
+.dentist{
+  position: relative;
+  height: 35dvh;
+  top: 10dvh;
+  width: auto;
+  left: 0dvw;
+}
+
+.ground-4{
+  top: 0dvh;
+}
+
+.customer{
+  position: relative;
+  height: 30dvh;
+  width: auto;
+  left: 0%;
+  top: 10dvh;
+  transform-origin: bottom center;
+}
