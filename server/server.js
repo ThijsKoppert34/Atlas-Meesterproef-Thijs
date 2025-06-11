@@ -1,24 +1,19 @@
 import express from 'express';
 import fetch from 'node-fetch'; // of global fetch bij Node 18+
 import path from 'path';
-import {
-  fileURLToPath
-} from 'url';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
 // Setup voor Liquid
-import {
-  Liquid
-} from 'liquidjs';
+import { Liquid } from 'liquidjs';
 const engine = new Liquid();
 app.engine('liquid', engine.express());
 app.set('views', './server/views');
 app.set('view engine', 'liquid');
 
 // Static bestanden
-const __dirname = path.dirname(fileURLToPath(
-  import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/client', express.static(path.join(__dirname, '../client')));
@@ -51,7 +46,6 @@ app.use(async (req, res, next) => {
     next();
   }
 });
-
 
 
 // Route
