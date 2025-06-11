@@ -32,27 +32,35 @@ const jsonFamily = 'https://fdnd-agency.directus.app/items/atlas_family/';
 
 
 
+app.use(async (req, res, next) => {
+  try {
+    const addressRes = await fetch(jsonAdress);
+    const adressen = (await addressRes.json()).data;
+
+    const straten = [...new Set(
+      adressen
+        .map(adres => adres.street?.trim())
+        .filter(Boolean)
+    )];
+
+    res.locals.straten = straten; // beschikbaar in alle templates
+    next();
+  } catch (err) {
+    console.error('Fout bij ophalen van adressen:', err);
+    res.locals.straten = []; // fallback
+    next();
+  }
+});
+
 
 
 // Route
 app.get('/', async (req, res) => {
   try {
-    const [personRes, addressRes] = await Promise.all([
-      fetch(jsonPerson),
-      fetch(jsonAdress)
-    ]);
-
+    const personRes = await fetch(jsonPerson);
     const personen = (await personRes.json()).data;
-    const adressen = (await addressRes.json()).data;
 
-    const straten = [...new Set(
-      adressen
-        .map(adres => adres.street?.trim()) // trim spaties
-        .filter(Boolean) // filter lege of undefined waarden
-    )];
-
-    res.render('index', { personen, straten });
-
+    res.render('index', { personen });
   } catch (err) {
     console.error(err);
     res.status(500).send('Fout bij ophalen van API');
@@ -89,6 +97,50 @@ app.get('/verhaal/:naam', async (req, res) => {
   }
 });
 
+
+app.get('/:straatnaam/:huisnummer', async (req, res) => {
+  try {
+    const straatnaam = decodeURIComponent(req.params.straatnaam.trim());
+
+    const huisnummer = parseInt(req.params.huisnummer, 10);
+    const toevoeging = req.params.toevoeging?.trim() || null;
+
+    const [addressRes, personRes] = await Promise.all([
+      fetch(jsonAdress),
+      fetch(jsonPerson)
+    ]);
+
+    const adressen = (await addressRes.json()).data;
+    const personen = (await personRes.json()).data;
+
+    // Zoek het specifieke adres
+    const adres = adressen.find(adres =>
+      adres.street?.trim() === straatnaam &&
+      parseInt(adres.house_number, 10) === huisnummer &&
+      ((adres.addition?.trim() || '') === (toevoeging || ''))
+    );
+
+    if (!adres) {
+      return res.status(404).send('Adres niet gevonden');
+    }
+
+    const bewoners = personen.filter(persoon =>
+      persoon.address_id === adres.id
+    );
+
+    res.render('detail', {
+      straatnaam,
+      huisnummer,
+      toevoeging,
+      adres,
+      bewoners
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Fout bij ophalen van huispagina');
+  }
+});
 
 
 
@@ -136,45 +188,3 @@ app.listen(port, () => {
   console.log(`Server draait op http://localhost:${port}`);
 });
 
-app.get('/:straatnaam/:huisnummer', async (req, res) => {
-  try {
-    const straatnaam = req.params.straatnaam.trim();
-    const huisnummer = parseInt(req.params.huisnummer, 10);
-    const toevoeging = req.params.toevoeging?.trim() || null;
-
-    const [addressRes, personRes] = await Promise.all([
-      fetch(jsonAdress),
-      fetch(jsonPerson)
-    ]);
-
-    const adressen = (await addressRes.json()).data;
-    const personen = (await personRes.json()).data;
-
-    // Zoek het specifieke adres
-    const adres = adressen.find(adres =>
-      adres.street?.trim() === straatnaam &&
-      adres.house_number === huisnummer &&
-      (adres.addition?.trim() || null) === toevoeging
-    );
-
-    if (!adres) {
-      return res.status(404).send('Adres niet gevonden');
-    }
-
-    const bewoners = personen.filter(persoon =>
-      persoon.address_id === adres.id
-    );
-
-    res.render('detail', {
-      straatnaam,
-      huisnummer,
-      toevoeging,
-      adres,
-      bewoners
-    });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Fout bij ophalen van huispagina');
-  }
-});
