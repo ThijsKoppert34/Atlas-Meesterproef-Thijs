@@ -6,7 +6,7 @@
       <title>{{ title }}</title>
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
- 
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <link rel="stylesheet" href="/index.css">
     <script src="/index.js" defer></script>
@@ -15,21 +15,56 @@
     {% block scripts %}
     {% endblock %}
   </head>
- 
+
   <body>
     <header>
- 
- 
+        <!-- Logo -->
       <img
         class="logo"
         src="/client/public/images/logo.avif"
         alt="Logo">
- 
- 
+
+      <!-- Navigatie -->
+      <nav>
+        <ul class="menu">
+          <!-- Home -->
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <!-- Straten Dropdown -->
+          <li class="dropdown">
+            <button class="dropbtn">Straten ▼</button>
+            <ul class="dropdown-content">
+              {% for straat in straten %}
+                <li>
+                  <a href="/{{ straat | urlencode }}">{{ straat }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+
+          <!-- Verhalen Dropdown -->
+          <li class="dropdown">
+            <button class="dropbtn">Verhalen ▼</button>
+            <ul class="dropdown-content">
+              <li>
+                <a href="/verhaal/Leo%20de%20Vries">Bekijk het verhaal van Leo de Vries</a>
+              </li>
+              <li>
+                <a href="/verhaal/Jozeph%20van%20den%20Bergh">Bekijk het verhaal van Jozeph van den Bergh</a>
+              </li>
+              <li>
+                <a href="/verhaal/Mozes%20Zurel%20en%20gezin">Bekijk het verhaal van Mozes Zurel en gezin</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
- 
- 
+
+
       {% block content %}
       {% endblock %}
     </main>
