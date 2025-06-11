@@ -1,144 +1,107 @@
-section{
-    display: flex;
-    flex-direction: column;
+section {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
-.house{
-    width: 15dvw;
-    height: 45dvh;
-    left: 43%;
-/*     transform-origin: bottom center; */
-    z-index: 1;
-    top: 20%;
+.house {
+  width: 15dvw;
+  height: 45dvh;
+  left: 43%;
+  z-index: 1;
+  top: 20%;
 }
 
-.scene-1{
-    position: relative;
+.scene-1 {
+  position: relative;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
-  background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
-  
-  > * {
+
+  background: linear-gradient(180deg, var(--color-gray-80) 0%, var(--color-gray-80) 50%, var(--color-gray-20) 100%);
+
+  >* {
     position: absolute;
   }
 }
 
-.skyline{
-  fill: url(#grad1);
+.skyline {
   width: 50dvw;
   z-index: -1;
   top: 15%;
 }
 
-.skyline-1{
-    left: 0;
+.skyline-1 {
+  left: -2dvw;
 }
 
-.skyline-2{
-    left: 50dvw;
+.skyline-2 {
+  left: 50dvw;
 }
 
-.adress{
-position: relative;
-    text-align: center;
-    font-size: 3rem;
-    padding: .5rem;
+.adress {
+  position: relative;
+  text-align: center;
+
+  font-size: var(--font-h1);
+  padding: .5rem;
+
   z-index: 2;
-  mix-blend-mode: exclusion;
-  color: white;
 }
 
-.family{
-position: relative;
-    text-align: center;
-    font-size: 2rem;
+.family {
+  position: relative;
+  text-align: center;
+  font-size: var(--font-h2);
   padding: 0;
   z-index: 2;
 }
 
-.tree{
+.tree {
   width: 15dvw;
   top: 45%;
 }
-.tree-1{
+
+.tree-1 {
   left: 20%;
 }
 
-.tree-2{
+.tree-2 {
   left: 65%;
 }
 
-.bike{
+.bike {
   width: 5dvw;
   top: 55%;
   left: 40%;
 }
 
-.cloud{
+.cloud {
   z-index: -3;
   width: 15dvw;
 }
 
-.cloud-1{
+.cloud-1 {
   width: 15dvw;
   left: 50%;
 }
 
-.cloud-2{
+.cloud-2 {
   width: 10dvw;
   left: 75%;
   top: 10%;
 }
 
-.cloud-3{
+.cloud-3 {
   width: 7dvw;
   left: 20%;
   top: 5%;
 }
 
+.scene-1-transition {
 
-
-
-@media screen and (max-width: 600px) {
-  body{
-    color: green;
-  }
-  .skyline{
-    width: 40dvh;
-    top: 25%;
-}
-  
-  .house{
-    width: 15dvh;
-    left: 35dvw;
-    top: 30%;
-}
-
-.tree{
-  top: 48%;
-  width: 25dvw
-}
-
-.tree-1{
-  left: 5%;
-}
-
-.tree-2{
-  left: 75%;
-}
-
-.bike{
-  width: 15dvw;
-  top: 60%;
-  left: 23%;
-}
-}
-
-.scene-1-transition{
-background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f );
-background-size: 160px 100%;
+  background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
+  background-size: 160px 100%;
   width: 100dvw;
   height: 100dvh;
   z-index: 10;
@@ -147,6 +110,456 @@ background-size: 160px 100%;
   opacity: 0;
 }
 
+@media screen and (max-width: 800px) {
+  .skyline {
+    width: 40dvh;
+    top: 25%;
+  }
+
+  .house {
+    width: 15dvh;
+    text-align: center;
+    left: 35dvw;
+    top: 30%;
+  }
+
+  .tree {
+    top: 48%;
+    width: 25dvw;
+  }
+
+  .tree-1 {
+    left: 5%;
+  }
+
+  .tree-2 {
+    left: 75%;
+  }
+
+  .bike {
+    width: 15dvw;
+    top: 60%;
+    left: 23%;
+  }
+}
+
+.scene-2 {
+  position: relative;
+  width: 100dvw;
+  height: 900dvh;
+
+  background-color: var(--color-gray-40);
+  background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
+
+  background-size: 160px 100%;
+  * {
+    position: relative;
+  }
+}
+
+.scene-2-wedding {
+  top: 25dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+.chandelier {
+  position: absolute;
+  left: 47%;
+  width: 8dvw;
+  height: auto;
+  top: -1dvh;
+}
+
+.wedding-text {
+  text-align: center;
+  top: 35dvh;
+  font-size: var(--font-big);
+}
+
+.bride {
+  height: 40dvh;
+  width: auto;
+  left: 40%;
+  top: 35dvh;
+  transform-origin: bottom center;
+}
+
+.groom {
+  height: 40dvh;
+  width: auto;
+  left: 45%;
+  top: 35dvh;
+  transform-origin: bottom center;
+}
+
+.floor {
+
+  background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--color-black) 80%, var(--color-black) 100%);
+
+  top: 25dvh;
+  width: 100dvw;
+  height: 10dvh;
+}
+
+.woman {
+  height: 35dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.baby {
+  height: 10dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.child-boy {
+  height: 20dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.man {
+  height: 40dvh;
+  width: auto;
+  left: 30%;
+  top: 20dvh;
+}
+
+.children-text {
+  text-align: center;
+  top: 15dvh;
+  font-size: var(--font-big);
+  margin: 2rem;
+}
+
+.grandma-1 {
+  height: 35dvh;
+  width: auto;
+  left: 30%;
+  top: 30dvh;
+}
+
+.floor-2 {
+  top: 10dvh;
+}
+
+.scene-2-children {
+  top: 50dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+
+.scene-2-grandmas{
+    top: 125dvh;
+  height: 200dvh;
+  width: 100dvw;
+}
+
+.woman-2 {
+  height: 35dvh;
+  width: auto;
+  left: 0%;
+  top: 30dvh;
+}
+
+.floor-3 {
+  top: 20dvh;
+}
+
+.grandma-text {
+  text-align: center;
+  top: 20dvh;
+  font-size: var(--font-big);
+  margin: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .chandelier {
+    left: 40%;
+    width: 8dvh;
+  }
+
+  .wedding-text {
+    top: 30dvh;
+  }
+
+  .bride {
+    height: 20dvh;
+    left: 30%;
+  }
+
+  .groom {
+    height: 20dvh;
+    left: 40%;
+  }
+
+  .woman {
+    height: 20dvh;
+    top: 15dvh;
+  }
+
+  .man {
+    height: 25dvh;
+    top: 15dvh;
+  }
+
+  .baby {
+    height: 5dvh;
+    top: 15dvh;
+  }
+
+  .child-boy {
+    height: 15dvh;
+    top: 15dvh;
+  }
+
+  .children-text {
+    top: 5dvh;
+  }
+
+  .floor-2 {
+    top: 5dvh;
+  }
+
+  .woman-2 {
+    top: 25dvh;
+  }
+
+  .grandma-1 {
+    height: 20dvh;
+    top: 25dvh;
+    left: 10%;
+  }
+
+  .floor-3 {
+    top: 16dvh;
+  }
+}
+
+.scene-3 {
+  position: relative;
+  width: 100dvw;
+  height: 400dvh;
+background-image:  linear-gradient(var(--color-gray-60) 8px, transparent 8px), linear-gradient(to right, var(--color-gray-60) 8px, var(--color-gray-40) 8px);
+background-size: 140px 140px;
+}
+
+.dentist-text {
+  position: relative;
+  text-align: center;
+  top: 50dvh;
+  font-size: var(--font-big);
+  margin: 2rem;
+}
+
+.floor-4 {
+  top: 0dvh;
+}
+
+.dentist {
+  position: relative;
+  height: 35dvh;
+  top: 12dvh;
+  width: auto;
+  left: 0dvw;
+}
+
+.ground-4 {
+  top: 0dvh;
+}
+
+.customer {
+  position: relative;
+  height: 30dvh;
+  width: auto;
+  left: 0%;
+  top: 10dvh;
+  transform-origin: bottom center;
+}
+
+.customer-2 {
+  height: 25dvh;
+}
+
+.scene-3-text-1,
+.scene-3-text-2,
+.scene-3-text-3 {
+  position: relative;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.dentist-text-1,
+.dentist-text-2,
+.dentist-text-3 {
+  top: 50%;
+}
+
+
+@media screen and (max-width: 800px) {
+  .customer:nth-child(-n+4){
+    display:none;
+  }
+
+  .customer{
+height: 15dvh;
+  }
+  .customer-2{
+  height: 12dvh;
+}
+  .dentist{
+height: 15dvh;
+top: 10dvh;
+
+  }
+
+  .dentist-text-1,
+  .dentist-text-2,
+  .dentist-text-3 {
+    top: 35%;
+  }
+}
+
+/* ================ */
+/* einde deel joost */
+/* ================ */
+
+.scene-4 {
+  background-color: var(--color-gray-60);
+  /* height: 100dvh; */
+  /* align-items: center; */
+}
+
+.scene-4-text {
+  height: 10dvh;
+  width: 100dvw;
+  /* margin: 0 1rem; */
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-body);
+  border-top: 1rem solid var(--color-black);
+  border-bottom: 1rem solid var(--color-black);
+}
+
+.scene-4-text p {
+  margin: 0 1rem;
+    font-size: var(--font-big);
+        text-align: center;
+}
+
+.scene-4-basement {
+  height: 100dvh;
+  width: 100dvw;
+  align-items: center;
+  /* background-color: rgba(0, 255, 0, 0.1);  */
+}
+
+.lamp {
+  width: 3dvw;
+  height: auto;
+  transform-origin: top center;
+}
+
+.scene-4-dark {
+  height: 100dvh;
+  width: 100dvw;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgba(0, 0, 255, 0.1);  */
+}
+
+.scene-4-dark p {
+  color: var(--color-white);
+  max-width: 60ch;
+  margin: 0 2rem;
+    font-size: var(--font-big);
+}
+
+/* ====== */
+.scene-5 {
+  /* height: 330dvh; */
+  background: linear-gradient(0deg, #e0e0e0 0%, #e0e0e0 50%, #2d2d2d 100%);
+}
+
+.scene-5-clouds {
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  height: 35dvh;
+  /* margin: 2rem 1rem; */
+}
+
+.train-cloud {
+  width: 10dvw;
+}
+
+#bird-1,
+#bird-2,
+#bird-3,
+#bird-4,
+#bird-5 {
+  visibility: hidden;
+}
+
+/* .scene-5-train {
+  margin-bottom: 5rem;
+} */
+
+.train {
+  width: 100dvw;
+}
+
+.scene-5-names {
+  height: min-content;
+  align-items: center;
+  gap: 2rem;
+  
+
+}
+
+.scene-5-names p{
+  font-size: var(--font-medium);
+}
+.scene-5-names-text {
+  /* max-width: 60ch; */
+  margin: 1rem;
+}
+
+.scene-5-names-dead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  margin: 0 1rem;
+}
+
+.scene-5-names-alive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.scene-5-girl {
+  width: 10dvw;
+  height: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* @media (max-width: 768px) {
+  .scene-5-clouds {
+    margin-top: 15dvh;
+  }
+} */
 
 
 .story-block {
@@ -161,19 +574,19 @@ background-size: 160px 100%;
   overflow: hidden;
   text-align: left;
 }
-
+ 
 .story-block h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #111;
 }
-
+ 
 .story-block p {
   font-size: 1.5rem;
   line-height: 1.6;
   color: #444;
 }
-
+ 
 .story-block img {
   max-width: 100%;
   height: auto;
@@ -181,20 +594,21 @@ background-size: 160px 100%;
   object-fit: contain;
   border-radius: 1rem;
 }
-
+ 
 .story-block .text-content {
   flex: 1;
   opacity: 0;
   transform: translateX(-100px);
   transition: all 0.8s ease-out;
 }
-
+ 
 .story-block img {
   flex: 1;
   opacity: 0;
   transform: translateX(100px);
   transition: all 0.8s ease-out;
 }
+
 
 /* Scene transition generic */
 .scene-1-transition-generic {
@@ -229,7 +643,7 @@ background-size: 160px 100%;
     text-align: center;
     padding: 2rem 3vw;
   }
-
+ 
   .story-block .text-content,
   .story-block img {
     transform: translateY(50px);
@@ -246,6 +660,7 @@ background-size: 160px 100%;
   }
 }
 
+
 @media (max-width: 480px) {
   .story-block h2 {
     font-size: 1.5rem;
@@ -259,3 +674,4 @@ background-size: 160px 100%;
     max-height: 40vh;
   }
 }
+

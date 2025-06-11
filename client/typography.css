@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   /* heading sizes */
@@ -11,6 +12,8 @@
   --font-h6: 1.125rem;
 
   /* body text */
+  --font-big: 2rem;
+  --font-medium: 1.5rem;
   --font-body: 1rem;
   --font-small: 0.875rem;
 }
@@ -24,19 +27,19 @@
     --font-h4: 1.25rem; /* 20px */
     --font-h5: 1.125rem; /* 18px */
     --font-h6: 1rem; /* 16px */
+    --font-big: var(--font-body);
+    --font-medium: var(--font-body);
   }
 }
 
 body {
-  font-family: "Noto Serif", serif;
+  font-family: "Space Mono", monospace;
   font-weight: 400;
   font-size: var(--font-body);
 }
 
 p {
-  font-family: "Merienda", cursive;
   font-size: var(--font-body);
-  line-height: 1.5rem;
 }
 
 small {
