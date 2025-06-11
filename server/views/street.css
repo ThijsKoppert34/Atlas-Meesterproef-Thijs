@@ -1,0 +1,58 @@
+html {
+  overflow-x: visible;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: rgb(177, 177, 177);
+  overflow-x: visible;
+}
+
+#huis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 80vh;
+  width: max-content;
+  animation: street-scroll linear infinite;
+}
+
+.wrapper svg {
+  height: 65vh;
+  width: auto;
+}
+
+.text-wrapper {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes street-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrappe svg {
+    height: 50vh;
+  }
+}

@@ -27,103 +27,75 @@ const jsonFamily = 'https://fdnd-agency.directus.app/items/atlas_family/';
 
 
 
-
-// Route
-app.get('/', async (req, res) => {
+app.use(async (req, res, next) => {
   try {
-    const [personRes, addressRes] = await Promise.all([
-      fetch(jsonPerson),
-      fetch(jsonAdress)
-    ]);
-
-    const personen = (await personRes.json()).data;
+    const addressRes = await fetch(jsonAdress);
     const adressen = (await addressRes.json()).data;
 
     const straten = [...new Set(
       adressen
-        .map(adres => adres.street?.trim()) // trim spaties
-        .filter(Boolean) // filter lege of undefined waarden
+        .map(adres => adres.street?.trim())
+        .filter(Boolean)
     )];
 
-    res.render('index', { personen, straten });
+    res.locals.straten = straten; // beschikbaar in alle templates
+    next();
+  } catch (err) {
+    console.error('Fout bij ophalen van adressen:', err);
+    res.locals.straten = []; // fallback
+    next();
+  }
+});
+
+
+// Route
+app.get('/', async (req, res) => {
+  try {
+    const personRes = await fetch(jsonPerson);
+    const personen = (await personRes.json()).data;
+
+    res.render('index', { personen });
   } catch (err) {
     console.error(err);
     res.status(500).send('Fout bij ophalen van API');
   }
 });
 
-app.get('/:straatnaam', async (req, res) => {
+
+import fs from 'fs/promises';
+
+app.get('/verhaal/:naam', async (req, res) => {
   try {
-    const straatnaam = req.params.straatnaam.trim();
+    const naam = decodeURIComponent(req.params.naam);
 
-    const [addressRes, personRes] = await Promise.all([
-      fetch(jsonAdress),
-      fetch(jsonPerson)
-    ]);
+    const storyPath = path.join(__dirname, '../client/public/story.json');
+    const rawData = await fs.readFile(storyPath, 'utf-8');
+    const storyData = JSON.parse(rawData);
 
-    const adressen = (await addressRes.json()).data;
-    const personen = (await personRes.json()).data;
+    const persoon = storyData.personen.find(p => p.naam === naam);
 
-    // Filter adressen op straatnaam
-    const gefilterdeAdressen = adressen.filter(adres => adres.street?.trim() === straatnaam);
+    if (!persoon) {
+      return res.status(404).send('Persoon niet gevonden');
+    }
 
-    const uniekeAdressen = [];
-
-const bestaandeCombinaties = new Set();
-
-for (const adres of gefilterdeAdressen) {
-  const combinatie = `${adres.street}-${adres.house_number}-${adres.addition ?? ''}`;
-  if (!bestaandeCombinaties.has(combinatie)) {
-    bestaandeCombinaties.add(combinatie);
-    uniekeAdressen.push(adres);
-  }
-}
-
-uniekeAdressen.sort((a, b) => {
-  // Eerst sorteren op huisnummer
-  if (a.house_number !== b.house_number) {
-    return a.house_number - b.house_number;
-  }
-
-  // Daarna optioneel op addition als die er is (alfabetisch)
-  const additionA = a.addition || '';
-  const additionB = b.addition || '';
-  return additionA.localeCompare(additionB);
-});
-
-
-
-    // IDs van de adressen in die straat
-    const adresIds = gefilterdeAdressen.map(adres => adres.id);
-
-    // Personen die op die adressen wonen
-    const personenInStraat = personen.filter(persoon =>
-      adresIds.includes(persoon.address_id)
-    );
-
-    res.render('straat', {
-      straatnaam,
-      personen: personenInStraat,
-      adressen: uniekeAdressen // gebruik de gefilterde lijst zonder duplicaten
+    res.render('generic', {
+      naam: persoon.naam,
+      familie: persoon.familie,
+      beroep: persoon.beroep,
+      verhaal: persoon.verhaal
     });
-    
+
   } catch (err) {
     console.error(err);
-    res.status(500).send('Fout bij ophalen van straatpagina');
+    res.status(500).send('Fout bij ophalen van verhaal');
   }
 });
 
-
-
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server draait op http://localhost:${port}`);
-});
 
 app.get('/:straatnaam/:huisnummer', async (req, res) => {
   try {
-    const straatnaam = req.params.straatnaam.trim();
+    const straatnaam = decodeURIComponent(req.params.straatnaam.trim());
+
     const huisnummer = parseInt(req.params.huisnummer, 10);
     const toevoeging = req.params.toevoeging?.trim() || null;
 
@@ -138,8 +110,8 @@ app.get('/:straatnaam/:huisnummer', async (req, res) => {
     // Zoek het specifieke adres
     const adres = adressen.find(adres =>
       adres.street?.trim() === straatnaam &&
-      adres.house_number === huisnummer &&
-      (adres.addition?.trim() || null) === toevoeging
+      parseInt(adres.house_number, 10) === huisnummer &&
+      ((adres.addition?.trim() || '') === (toevoeging || ''))
     );
 
     if (!adres) {
@@ -163,3 +135,50 @@ app.get('/:straatnaam/:huisnummer', async (req, res) => {
     res.status(500).send('Fout bij ophalen van huispagina');
   }
 });
+
+
+
+
+app.get('/:straatnaam', async (req, res) => {
+ 
+  const straatnaam = req.params.straatnaam;
+ 
+  try {
+    const adressenData = await fetch('https://fdnd-agency.directus.app/items/atlas_address/');
+    const adressen = await adressenData.json();
+    const huidigAdres = adressen.data.filter(adres => adres.street?.trim() === straatnaam);
+ 
+    await Promise.all(huidigAdres.map(async (adres) => {
+      const personen = adres.person;
+      if (Array.isArray(personen) && personen.length > 0) {
+        // Fetch all personen for this adres
+        const personenData = await Promise.all(personen.map(async (persoonId) => {
+          const persoonData = await fetch(`https://fdnd-agency.directus.app/items/atlas_person/${persoonId}`);
+          const persoonJson = await persoonData.json();
+          return persoonJson.data;
+        }));
+        // Set last_name from the first person (or adjust as needed)
+        adres.last_name = personenData[0]?.last_name ? personenData[0].last_name : 'Onbekend';
+      } else {
+        adres.last_name = 'Onbekend';
+      }
+    }));
+ 
+    res.render('street', {
+      huidigAdres,
+      straatnaam
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Fout bij ophalen van API');
+  }
+ 
+})
+
+
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server draait op http://localhost:${port}`);
+});
+

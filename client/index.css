@@ -1,20 +1,20 @@
 /* global styles */
 @import 'reset.css';
 @import "typography.css";
-
+@import '../server/views/detail.css';
+ 
 /*.layout and view styling */
 @import '../server/layouts/base.css';
 @import '../server/views/index.css';
-
+@import '../server/views/street.css';
+ 
 /* component styling */
 @import '../server/components/card/card.css';
-
-/*  */
-@import '../server/views/detail.css';
+ 
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
-
+ 
   --color-gray-10: #111111;
   --color-gray-20: #2d2d2d;
   --color-gray-30: #444444;
@@ -25,16 +25,11 @@
   --color-gray-80: #e0e0e0;
 
   --color-blue: #4682b4;
-
+ 
 }
-
+ 
 body {
   color: var(--color-black);
-
+ 
   margin: 0 auto;
-  background-image: url('/images/background.jpg');
-}
-
-main {
-  /* padding: 1rem; */
 }
