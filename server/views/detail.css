@@ -8,7 +8,6 @@ section {
   width: 15dvw;
   height: 45dvh;
   left: 43%;
-  /*     transform-origin: bottom center; */
   z-index: 1;
   top: 20%;
 }
@@ -18,7 +17,7 @@ section {
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
-  background: linear-gradient(180deg, rgb(200 200 200) 0%, rgb(200 200 200) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(180deg, var(--color-gray-80) 0%, var(--color-gray-80) 50%, var(--color-gray-20) 100%);
 
   >* {
     position: absolute;
@@ -26,7 +25,6 @@ section {
 }
 
 .skyline {
-  fill: url(#grad1);
   width: 50dvw;
   z-index: -1;
   top: 15%;
@@ -43,17 +41,15 @@ section {
 .adress {
   position: relative;
   text-align: center;
-  font-size: 3rem;
+  font-size: var(--font-h1);
   padding: .5rem;
   z-index: 2;
-  mix-blend-mode: exclusion;
-  color: white;
 }
 
 .family {
   position: relative;
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--font-h2);
   padding: 0;
   z-index: 2;
 }
@@ -100,7 +96,7 @@ section {
 }
 
 .scene-1-transition {
-  background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f);
+  background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
   background-size: 160px 100%;
   width: 100dvw;
   height: 100dvh;
@@ -110,11 +106,7 @@ section {
   opacity: 0;
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    color: green;
-  }
-
+@media screen and (max-width: 800px) {
   .skyline {
     width: 40dvh;
     top: 25%;
@@ -151,8 +143,8 @@ section {
   position: relative;
   width: 100dvw;
   height: 900dvh;
-  background-color: #7f7f7f;
-  background-image: linear-gradient(to right, #bbbbbb, #bbbbbb 80px, #7f7f7f 80px, #7f7f7f);
+  background-color: var(--color-gray-40);
+  background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
   background-size: 160px 100%;
     * {
     position: relative;
@@ -160,7 +152,6 @@ section {
 }
 
 .scene-2-wedding {
-  /* position: relative; */
   top: 25dvh;
   height: 200dvh;
   width: 100dvw;
@@ -175,14 +166,12 @@ section {
 }
 
 .wedding-text {
-  /* position: relative; */
   text-align: center;
   top: 35dvh;
-  font-size: 3rem;
+  font-size: var(--font-big);
 }
 
 .bride {
-  /* position: relative; */
   height: 40dvh;
   width: auto;
   left: 40%;
@@ -191,7 +180,6 @@ section {
 }
 
 .groom {
-  /* position: relative; */
   height: 40dvh;
   width: auto;
   left: 45%;
@@ -200,16 +188,13 @@ section {
 }
 
 .floor {
-  /* position: relative; */
-  background: #ffffff;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 80%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--color-black) 80%, var(--color-black) 100%);
   top: 25dvh;
   width: 100dvw;
   height: 10dvh;
 }
 
 .woman {
-  /* position: relative; */
   height: 35dvh;
   width: auto;
   left: 30%;
@@ -217,7 +202,6 @@ section {
 }
 
 .baby {
-  /* position: relative; */
   height: 10dvh;
   width: auto;
   left: 30%;
@@ -226,7 +210,6 @@ section {
 }
 
 .child-boy {
-  /* position: relative; */
   height: 20dvh;
   width: auto;
   left: 30%;
@@ -235,7 +218,6 @@ section {
 }
 
 .man {
-  /* position: relative; */
   height: 40dvh;
   width: auto;
   left: 30%;
@@ -243,16 +225,13 @@ section {
 }
 
 .children-text {
-  /* position: relative; */
   text-align: center;
   top: 15dvh;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: var(--font-big);
   margin: 2rem;
 }
 
 .grandma-1 {
-  /* position: relative; */
   height: 35dvh;
   width: auto;
   left: 30%;
@@ -264,17 +243,12 @@ section {
 }
 
 .scene-2-children {
-  /* position: relative; */
   top: 50dvh;
   height: 200dvh;
   width: 100dvw;
 }
 
-
-
-
 .scene-2-grandmas{
-  /* position: relative; */
     top: 125dvh;
   height: 200dvh;
   width: 100dvw;
@@ -292,24 +266,20 @@ height: 35dvh;
 }
 
 .grandma-text {
-  /* position: relative; */
   text-align: center;
   top: 20dvh;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: var(--font-big);
   margin: 2rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .chandelier {
     left: 40%;
     width: 8dvh;
   }
 
   .wedding-text {
-    font-size: 2rem;
     top: 30dvh;
-    line-height: 2.5rem;
   }
 
   .bride {
@@ -347,7 +317,6 @@ height: 35dvh;
 
   .children-text {
     top: 5dvh;
-    font-size: 1.5rem;
   }
 
   .floor-2 {
@@ -374,8 +343,7 @@ height: 35dvh;
   position: relative;
   width: 100dvw;
   height: 400dvh;
-  background-color: #7f7f7f;
-background-image:  linear-gradient(#bbbbbb 8px, transparent 8px), linear-gradient(to right, #bbbbbb 8px, #7f7f7f 8px);
+background-image:  linear-gradient(var(--color-gray-60) 8px, transparent 8px), linear-gradient(to right, var(--color-gray-60) 8px, var(--color-gray-40) 8px);
 background-size: 140px 140px;
 
 }
@@ -384,7 +352,7 @@ background-size: 140px 140px;
   position: relative;
   text-align: center;
   top: 50dvh;
-  font-size: 3rem;
+  font-size: var(--font-big);
   margin: 2rem;
 }
 
@@ -427,19 +395,19 @@ background-size: 140px 140px;
   top: 50%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .customer:nth-child(-n+4){
     display:none;
   }
 
   .customer{
-height: 17dvh;
+height: 15dvh;
   }
   .customer-2{
-  height: 14dvh;
+  height: 12dvh;
 }
   .dentist{
-height: 17dvh;
+height: 15dvh;
 top: 10dvh;
   }
   .dentist-text-1, .dentist-text-2, .dentist-text-3{
