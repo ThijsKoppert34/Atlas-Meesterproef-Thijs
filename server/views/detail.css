@@ -17,6 +17,7 @@ section {
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
+
   background: linear-gradient(180deg, var(--color-gray-80) 0%, var(--color-gray-80) 50%, var(--color-gray-20) 100%);
 
   >* {
@@ -41,8 +42,10 @@ section {
 .adress {
   position: relative;
   text-align: center;
+
   font-size: var(--font-h1);
   padding: .5rem;
+
   z-index: 2;
 }
 
@@ -96,6 +99,7 @@ section {
 }
 
 .scene-1-transition {
+
   background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
   background-size: 160px 100%;
   width: 100dvw;
@@ -121,7 +125,7 @@ section {
 
   .tree {
     top: 48%;
-    width: 25dvw
+    width: 25dvw;
   }
 
   .tree-1 {
@@ -143,10 +147,12 @@ section {
   position: relative;
   width: 100dvw;
   height: 900dvh;
+
   background-color: var(--color-gray-40);
   background-image: linear-gradient(to right, var(--color-gray-60), var(--color-gray-60) 80px, var(--color-gray-40) 80px, var(--color-gray-40));
+
   background-size: 160px 100%;
-    * {
+  * {
     position: relative;
   }
 }
@@ -158,11 +164,11 @@ section {
 }
 
 .chandelier {
-      position: absolute;
-    left: 47%;
-    width: 8dvw;
-    height: auto;
-    top: -1dvh;
+  position: absolute;
+  left: 47%;
+  width: 8dvw;
+  height: auto;
+  top: -1dvh;
 }
 
 .wedding-text {
@@ -188,7 +194,9 @@ section {
 }
 
 .floor {
+
   background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--color-black) 80%, var(--color-black) 100%);
+
   top: 25dvh;
   width: 100dvw;
   height: 10dvh;
@@ -206,7 +214,6 @@ section {
   width: auto;
   left: 30%;
   top: 20dvh;
-
 }
 
 .child-boy {
@@ -214,7 +221,6 @@ section {
   width: auto;
   left: 30%;
   top: 20dvh;
-
 }
 
 .man {
@@ -248,20 +254,21 @@ section {
   width: 100dvw;
 }
 
+
 .scene-2-grandmas{
     top: 125dvh;
   height: 200dvh;
   width: 100dvw;
 }
 
-.woman-2{
-height: 35dvh;
-    width: auto;
-    left: 0%;
+.woman-2 {
+  height: 35dvh;
+  width: auto;
+  left: 0%;
   top: 30dvh;
 }
 
-.floor-3{
+.floor-3 {
   top: 20dvh;
 }
 
@@ -295,7 +302,6 @@ height: 35dvh;
   .woman {
     height: 20dvh;
     top: 15dvh;
-
   }
 
   .man {
@@ -306,13 +312,11 @@ height: 35dvh;
   .baby {
     height: 5dvh;
     top: 15dvh;
-
   }
 
   .child-boy {
     height: 15dvh;
     top: 15dvh;
-
   }
 
   .children-text {
@@ -323,8 +327,7 @@ height: 35dvh;
     top: 5dvh;
   }
 
-
-  .woman-2{
+  .woman-2 {
     top: 25dvh;
   }
 
@@ -334,7 +337,7 @@ height: 35dvh;
     left: 10%;
   }
 
-  .floor-3{
+  .floor-3 {
     top: 16dvh;
   }
 }
@@ -345,7 +348,6 @@ height: 35dvh;
   height: 400dvh;
 background-image:  linear-gradient(var(--color-gray-60) 8px, transparent 8px), linear-gradient(to right, var(--color-gray-60) 8px, var(--color-gray-40) 8px);
 background-size: 140px 140px;
-
 }
 
 .dentist-text {
@@ -356,11 +358,11 @@ background-size: 140px 140px;
   margin: 2rem;
 }
 
-.floor-4{
+.floor-4 {
   top: 0dvh;
 }
 
-.dentist{
+.dentist {
   position: relative;
   height: 35dvh;
   top: 12dvh;
@@ -368,11 +370,11 @@ background-size: 140px 140px;
   left: 0dvw;
 }
 
-.ground-4{
+.ground-4 {
   top: 0dvh;
 }
 
-.customer{
+.customer {
   position: relative;
   height: 30dvh;
   width: auto;
@@ -381,19 +383,24 @@ background-size: 140px 140px;
   transform-origin: bottom center;
 }
 
-.customer-2{
+.customer-2 {
   height: 25dvh;
 }
 
-.scene-3-text-1, .scene-3-text-2, .scene-3-text-3{
+.scene-3-text-1,
+.scene-3-text-2,
+.scene-3-text-3 {
   position: relative;
   height: 100dvh;
   width: 100dvw;
 }
 
-.dentist-text-1, .dentist-text-2, .dentist-text-3 {
+.dentist-text-1,
+.dentist-text-2,
+.dentist-text-3 {
   top: 50%;
 }
+
 
 @media screen and (max-width: 800px) {
   .customer:nth-child(-n+4){
@@ -409,8 +416,139 @@ height: 15dvh;
   .dentist{
 height: 15dvh;
 top: 10dvh;
+
   }
-  .dentist-text-1, .dentist-text-2, .dentist-text-3{
-  top: 35%;
+
+  .dentist-text-1,
+  .dentist-text-2,
+  .dentist-text-3 {
+    top: 35%;
+  }
 }
+
+/* ================ */
+/* einde deel joost */
+/* ================ */
+
+.scene-4 {
+  background-color: var(--color-gray-60);
+  /* height: 100dvh; */
+  /* align-items: center; */
 }
+
+.scene-4-text {
+  height: 10dvh;
+  width: 100dvw;
+  /* margin: 0 1rem; */
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-body);
+  border-top: 1rem solid var(--color-black);
+  border-bottom: 1rem solid var(--color-black);
+}
+
+.scene-4-text p {
+  margin: 0 1rem;
+}
+
+.scene-4-basement {
+  height: 100dvh;
+  width: 100dvw;
+  align-items: center;
+  /* background-color: rgba(0, 255, 0, 0.1);  */
+}
+
+.lamp {
+  width: 3dvw;
+  height: auto;
+  transform-origin: top center;
+}
+
+.scene-4-dark {
+  height: 100dvh;
+  width: 100dvw;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgba(0, 0, 255, 0.1);  */
+}
+
+.scene-4-dark p {
+  color: var(--color-white);
+  max-width: 60ch;
+  margin: 0 2rem;
+}
+
+/* ====== */
+.scene-5 {
+  /* height: 330dvh; */
+  background: linear-gradient(0deg, #e0e0e0 0%, #e0e0e0 50%, #2d2d2d 100%);
+}
+
+.scene-5-clouds {
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  height: 35dvh;
+  /* margin: 2rem 1rem; */
+}
+
+.train-cloud {
+  width: 10dvw;
+}
+
+#bird-1,
+#bird-2,
+#bird-3,
+#bird-4,
+#bird-5 {
+  visibility: hidden;
+}
+
+/* .scene-5-train {
+  margin-bottom: 5rem;
+} */
+
+.train {
+  width: 100dvw;
+}
+
+.scene-5-names {
+  height: min-content;
+  align-items: center;
+  gap: 2rem;
+}
+
+.scene-5-names-text {
+  /* max-width: 60ch; */
+  margin: 1rem;
+}
+
+.scene-5-names-dead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  margin: 0 1rem;
+}
+
+.scene-5-names-alive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.scene-5-girl {
+  width: 10dvw;
+  height: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* @media (max-width: 768px) {
+  .scene-5-clouds {
+    margin-top: 15dvh;
+  }
+} */
