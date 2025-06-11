@@ -390,3 +390,47 @@ tlScene5Names
     "<0.5"
   )
   .fromTo(".scene-5-names-alive svg", {opacity:0}, {opacity: 1, stagger:0.3},0)
+
+
+
+  // generic gedeelte
+ 
+gsap.registerPlugin(ScrollTrigger);
+ 
+// Selecteer elk blok
+document.querySelectorAll('.story-block').forEach((block, index) => {
+  let content = block.querySelectorAll('.text-content, img');
+ 
+ 
+  // Timeline per blok
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: block,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true,
+      markers: false,
+    }
+  });
+ 
+  // Content komt naar binnen
+  tl.to(content, {
+    opacity: 1,
+    y: 0,
+    stagger: 1,
+    duration: 1,
+    ease: "power2.out"
+  });
+ 
+  // Content gaat weer weg
+  tl.to(content, {
+    opacity: 0,
+    y: -300,
+    stagger: 1,
+    duration: 1,
+    ease: "power2.in"
+  });
+});
+ 
+ 
