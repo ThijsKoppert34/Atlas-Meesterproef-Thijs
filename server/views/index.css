@@ -327,14 +327,68 @@ button:hover {
 }
 
 
-.uitgelicht{
+.uitgelicht {
   padding: 2em;
-  display:flex;
-
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.uitgelicht h2{
-  font-size: 3em;
-
+.uitgelicht h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
+.uitgelicht ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.uitgelicht li {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 30%;
+  height: 14em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uitgelicht li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.uitgelicht a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.uitgelicht img {
+  width: 6em;
+  height: 6em;
+  object-fit: contain;
+}
+
+/* Responsive: op mobiel onder elkaar */
+@media (max-width: 768px) {
+  .uitgelicht li {
+    width: 80%;
+    height: auto;
+    padding: 2em 0;
+  }
+}
