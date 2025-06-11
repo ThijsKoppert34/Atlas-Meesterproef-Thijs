@@ -30,11 +30,6 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
         padding-bottom: 0.5rem;
       }
 
-      ul {
-        display: flex;
-        flex-direction: column;
-      }
-
       li {
         padding: 0.5rem 3.5rem 0.5rem 0;
         white-space: nowrap;
@@ -391,4 +386,25 @@ button:hover {
     height: auto;
     padding: 2em 0;
   }
+
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto; /* Sidebar boven content */
+  }
+
+  .sidebar-content form ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .sidebar-content form ul li {
+    padding: 0;
+  }
+
+  .sidebar-content form ul li a {
+    width: 100%;
+    text-align: center;
+  }
+
 }

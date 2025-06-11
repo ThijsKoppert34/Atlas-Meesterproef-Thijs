@@ -75,11 +75,22 @@ gsap.from('svg[aria-label="introSVG"] path', {
 
 const steps = document.querySelectorAll(".story-step");
 const overlay = document.getElementById("story-overlay");
+const title = document.querySelector(".story h1");
+const prevBtn = document.getElementById("prevBtn");
 let currentStep = 0;
 
 function showStep(index) {
   steps.forEach((step) => step.classList.remove("active"));
   steps[index].classList.add("active");
+
+  // Titel alleen tonen bij eerste stap
+  if (index === 0) {
+    title.style.display = "block";
+    prevBtn.style.display = "none";
+  } else {
+    title.style.display = "none";
+    prevBtn.style.display = "inline-block";
+  }
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -98,6 +109,8 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   }
 });
 
+// Zorg dat de eerste stap goed wordt weergegeven bij laden
+showStep(currentStep);
  
 
 // Zorgt ervoor dat dropdowns werken op mobiel (klik ipv hover)

@@ -197,6 +197,18 @@ background-size: 160px 100%;
   transition: all 0.8s ease-out;
 }
 
+
+.scene-1-transition-generic{
+background-color: white;
+background-size: 160px 100%;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 10;
+    left: 0%;
+    top: 0%;
+    opacity: 0;
+  }
+
 /* Optioneel: responsive stack op mobiel */
 @media (max-width: 768px) {
   .story-block {

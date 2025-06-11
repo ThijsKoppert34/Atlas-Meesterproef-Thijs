@@ -32,27 +32,35 @@ const jsonFamily = 'https://fdnd-agency.directus.app/items/atlas_family/';
 
 
 
+app.use(async (req, res, next) => {
+  try {
+    const addressRes = await fetch(jsonAdress);
+    const adressen = (await addressRes.json()).data;
+
+    const straten = [...new Set(
+      adressen
+        .map(adres => adres.street?.trim())
+        .filter(Boolean)
+    )];
+
+    res.locals.straten = straten; // beschikbaar in alle templates
+    next();
+  } catch (err) {
+    console.error('Fout bij ophalen van adressen:', err);
+    res.locals.straten = []; // fallback
+    next();
+  }
+});
+
 
 
 // Route
 app.get('/', async (req, res) => {
   try {
-    const [personRes, addressRes] = await Promise.all([
-      fetch(jsonPerson),
-      fetch(jsonAdress)
-    ]);
-
+    const personRes = await fetch(jsonPerson);
     const personen = (await personRes.json()).data;
-    const adressen = (await addressRes.json()).data;
 
-    const straten = [...new Set(
-      adressen
-        .map(adres => adres.street?.trim()) // trim spaties
-        .filter(Boolean) // filter lege of undefined waarden
-    )];
-
-    res.render('index', { personen, straten });
-
+    res.render('index', { personen });
   } catch (err) {
     console.error(err);
     res.status(500).send('Fout bij ophalen van API');
