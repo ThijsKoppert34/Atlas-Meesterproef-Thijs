@@ -83,3 +83,31 @@ document.getElementById('prevBtn').addEventListener('click', () => {
   }
 });
  
+
+// Zorgt ervoor dat dropdowns werken op mobiel (klik ipv hover)
+document.querySelectorAll('.dropbtn').forEach(button => {
+  button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const dropdown = this.nextElementSibling;
+      const isOpen = dropdown.style.display === 'block';
+
+      // Eerst alle dropdowns sluiten
+      document.querySelectorAll('.dropdown-content').forEach(menu => {
+          menu.style.display = 'none';
+      });
+
+      // Open huidige als die nog niet open is
+      if (!isOpen) {
+          dropdown.style.display = 'block';
+      }
+  });
+});
+
+// Sluit dropdowns als je ergens anders klikt
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-content').forEach(menu => {
+          menu.style.display = 'none';
+      });
+  }
+});

@@ -6,13 +6,13 @@
           "id": "familie",
           "title": "Familie van Leo",
           "text": "Leo de Vries was de zoon van Melchia de Vries, een lijstenfabrikant en kunstschilder uit Veendam, en Marianne Heertje. Leo groeide op in een gezin van vijf kinderen. Zijn moeder werd omgebracht in Auschwitz in 1943, kort nadat ze in Westerbork terechtkwam. Leo had vier broers, Marcus, Johan, Frits en Philip, die allen door de nazi’s werden vermoord. Leo was verloofd met een vrouw genaamd Ida, maar zij overleefde de oorlog niet.",
-          "svg": "familie.svg"
+          "svg": "/client/SVG/gezin5kids.svg"
         },
         "beroep": {
           "id": "beroepen",
           "title": "Opleiding en werk",
           "text": "Na het afronden van de lagere school volgde Leo een driejarige HBS-opleiding. Hij werd in 1921 vrijgesteld van militaire dienst vanwege broederdienst. In de oorlog werkte Leo als kantoor- en bankbediende bij de Rotterdamsche Bankvereeniging.",
-          "svg": "beroep.svg"
+          "svg": "/client/SVG/bankmeneer.svg"
         },
         "verhaal": {
           "id": "verhaal",
@@ -27,13 +27,13 @@
           "id": "familie",
           "title": "Familie van Jozeph",
           "text": "Jozeph was de zoon van Levie van den Bergh en Betje Polak. Zijn ouders overleden al in de jaren '30, nog voor de oorlog. Jozeph had een broer, Hartog, die met zijn gezin de oorlog niet overleefde. Hartog woonde op de Ruyschstraat 52-3 en werd vermoord in Sobibor in 1943. Jozeph bleef ongehuwd en kinderloos.",
-          "svg": "familie.svg"
+          "svg": "/client/SVG/tweebroers.svg"
         },
         "beroep": {
           "id": "beroepen",
           "title": "Beroep en werkleven",
           "text": "Jozeph was kantoorbediende van beroep. In 1915 werd hij voor militaire dienst geschikt verklaard, en hij woonde op dat moment aan de Zeeburgerkade. Later verhuisde hij naar de Pretoriusstraat 98, waar hij woonde vanaf 1936 tot in de oorlogsjaren.",
-          "svg": "beroep.svg"
+          "svg": "/client/SVG/manachterbureau.svg"
         },
         "verhaal": {
           "id": "verhaal",
@@ -48,13 +48,13 @@
           "id": "familie",
           "title": "Gezin Zurel",
           "text": "Mozes Zurel werd geboren op 15 november 1910 in Amsterdam. Hij was de zoon van Benedictus Zurel en Celina Roselaar en kwam uit een gezin van twaalf kinderen, waarvan er velen jong overleden. In 1933 trouwde hij met Kaatje Dooseman. Samen kregen zij drie zonen: Robert (1936), André (1938) en Alfred (1942). Alleen Alfred overleefde de oorlog. Kaatje was de dochter van Levie Dooseman en Roosje Bloch. Ook twee zussen van Kaatje, Margaretha en Gonda, kwamen om het leven. Bij Mozes’ familie werden eveneens broers en zussen vermoord: Joachim, Engeltje, Anna en Sophia.",
-          "svg": "familie.svg"
+          "svg": "/client/SVG/familievan5.svg"
         },
         "beroep": {
           "id": "beroepen",
           "title": "Beroep en diensttijd",
           "text": "Mozes was op jonge leeftijd werkzaam als banketbakker en later als lompensorteerder. In 1929 werd hij goedgekeurd voor militaire dienst, waarbij hij hoopte bij de wielrijders geplaatst te worden, maar uiteindelijk terechtkwam bij het Achttiende Regiment in Amersfoort. In de jaren voor de oorlog woonde het gezin korte tijd in Haarlem en daarna in Amsterdam, onder andere op de Derde Oosterparkstraat 125-1.",
-          "svg": "beroep.svg"
+          "svg": "/client/SVG/bakker.svg"
         },
         "verhaal": {
           "id": "verhaal",
