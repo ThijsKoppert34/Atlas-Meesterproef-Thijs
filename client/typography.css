@@ -13,6 +13,7 @@
 
   /* body text */
   --font-big: 2rem;
+  --font-medium: 1.5rem;
   --font-body: 1rem;
   --font-small: 0.875rem;
 }
@@ -27,6 +28,7 @@
     --font-h5: 1.125rem; /* 18px */
     --font-h6: 1rem; /* 16px */
     --font-big: var(--font-body);
+    --font-medium: var(--font-body);
   }
 }
 

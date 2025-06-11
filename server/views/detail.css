@@ -449,6 +449,8 @@ top: 10dvh;
 
 .scene-4-text p {
   margin: 0 1rem;
+    font-size: var(--font-big);
+        text-align: center;
 }
 
 .scene-4-basement {
@@ -476,6 +478,7 @@ top: 10dvh;
   color: var(--color-white);
   max-width: 60ch;
   margin: 0 2rem;
+    font-size: var(--font-big);
 }
 
 /* ====== */
@@ -515,8 +518,13 @@ top: 10dvh;
   height: min-content;
   align-items: center;
   gap: 2rem;
+  
+
 }
 
+.scene-5-names p{
+  font-size: var(--font-medium);
+}
 .scene-5-names-text {
   /* max-width: 60ch; */
   margin: 1rem;
