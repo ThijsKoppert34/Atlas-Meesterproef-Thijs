@@ -1,5 +1,5 @@
 /* header */
-header {
+/* header {
   padding: 1rem;
  
   background-color: #737c85;
@@ -8,4 +8,102 @@ header {
  
 .logo {
   width: 8rem;
+} */
+
+
+/* Basis layout header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #737c85;
 }
+
+/* Logo */
+.logo {
+  height: 50px;
+}
+
+/* Navigatie menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Standaard links en knoppen */
+.menu a, .dropbtn {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown inhoud standaard verborgen */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Hover effect voor dropdown items */
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Specifiek voor de laatste dropdown (verhalen) */
+.dropdown:last-child .dropdown-content {
+  left: auto;
+  right: 0;
+}
+
+
+/* Voor desktop: open dropdown bij hover */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+}
+
