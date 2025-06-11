@@ -149,7 +149,6 @@ background-size: 160px 100%;
 
 
 
-/* Generic gedeelt */
 .story-block {
   height: 100vh;
   display: flex;
@@ -197,28 +196,66 @@ background-size: 160px 100%;
   transition: all 0.8s ease-out;
 }
 
+/* Scene transition generic */
+.scene-1-transition-generic {
+  background-color: white;
+  background-size: 160px 100%;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 10;
+  left: 0%;
+  top: 0%;
+  opacity: 0;
+}
 
-.scene-1-transition-generic{
-background-color: white;
-background-size: 160px 100%;
-    width: 100dvw;
-    height: 100dvh;
-    z-index: 10;
-    left: 0%;
-    top: 0%;
-    opacity: 0;
+/* Responsive verbeteringen */
+@media (max-width: 1024px) {
+  .story-block {
+    padding: 3rem 5vw;
   }
 
-/* Optioneel: responsive stack op mobiel */
+  .story-block h2 {
+    font-size: 2.5rem;
+  }
+
+  .story-block p {
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   .story-block {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 3vw;
   }
 
   .story-block .text-content,
   .story-block img {
     transform: translateY(50px);
+    flex: unset; /* Hier haal je flex: 1 weg */
+    width: 100%;  /* Zorg dat ze volledige breedte pakken binnen de kolom */
+  }
+
+  .story-block h2 {
+    font-size: 2rem;
+  }
+
+  .story-block p {
+    font-size: 1.1rem;
   }
 }
 
+@media (max-width: 480px) {
+  .story-block h2 {
+    font-size: 1.5rem;
+  }
+
+  .story-block p {
+    font-size: 1rem;
+  }
+
+  .story-block img {
+    max-height: 40vh;
+  }
+}
