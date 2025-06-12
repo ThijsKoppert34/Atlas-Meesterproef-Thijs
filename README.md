@@ -14,7 +14,7 @@ Deze site is gemaakt om verhalen te vertellen van Joodse slachtoffers van de Twe
 
 ### Installing
 
-* Navigeer naar nodejs.org en installeer de NodeJS ontwikkelomgeving. Kies voor NodeJS 22.13.1 with long-term support, download de benodigde bestanden en doorloop het installatieproces.
+* Navigeer naar [nodejs.org](https://nodejs.org/en/download) en installeer de NodeJS ontwikkelomgeving. Kies voor NodeJS 22.13.1 with long-term support, download de benodigde bestanden en doorloop het installatieproces.
 
 ### Executing program
 
