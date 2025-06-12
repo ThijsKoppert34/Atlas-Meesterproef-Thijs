@@ -28,11 +28,11 @@ npm run dev
 
 ## Authors
 
-- **[Christian van Drunen]** – Role / Responsibilities
-- **[Joost Locher]** – Role / Responsibilities
-- **[Mischa Melkert]** – Role / Responsibilities
-- **[Thijs Koppert]** – Role / Responsibilities
+- **[Christian van Drunen]** – storyteller / gsap animations, detail page
+- **[Joost Locher]** – storyteller / gsap animations, detail page
+- **[Mischa Melkert]** – homepage / homepage and backend
+- **[Thijs Koppert]** – homepage / homepage
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
+[codepen scrollytelling isladjan](https://codepen.io/isladjan/pen/abdyPBw)
