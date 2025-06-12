@@ -192,6 +192,10 @@ section {
   width: 8dvw;
   height: auto;
   top: -1dvh;
+
+  #dentist {
+    visibility: hidden;
+  }
 }
 
 .wedding-text {
@@ -543,34 +547,33 @@ section {
   font-size: var(--font-big);
 }
 
-/* ====== */
+/* ======= */
+/* scene 5 */
+/* ======= */
+
 .scene-5 {
   /* height: 330dvh; */
   background: linear-gradient(0deg, #e0e0e0 0%, #e0e0e0 50%, #2d2d2d 100%);
 }
 
+
 .scene-5-clouds {
   justify-content: space-evenly;
   flex-direction: row-reverse;
   height: 35dvh;
-  /* margin: 2rem 1rem; */
 }
 
 .train-cloud {
   width: 10dvw;
+  height: auto;
 }
 
 #bird-1,
 #bird-2,
 #bird-3,
-#bird-4,
-#bird-5 {
+#bird-4 {
   visibility: hidden;
 }
-
-/* .scene-5-train {
-  margin-bottom: 5rem;
-} */
 
 .train {
   width: 100dvw;
@@ -586,7 +589,6 @@ section {
   font-size: var(--font-medium);
 }
 .scene-5-names-text {
-  /* max-width: 60ch; */
   margin: 1rem;
 }
 
@@ -615,11 +617,9 @@ strong {
   font-weight: bold;
 }
 
-/* @media (max-width: 768px) {
-  .scene-5-clouds {
-    margin-top: 15dvh;
-  }
-} */
+/* ======= */
+/* generic */
+/* ======= */
 
 .story-block {
   height: 100vh;
@@ -670,7 +670,7 @@ strong {
 
 /* Scene transition generic */
 .scene-1-transition-generic {
-  background-color: white;
+  background-color: #f5f5f5;
   background-size: 160px 100%;
   width: 100dvw;
   height: 100dvh;
@@ -731,3 +731,45 @@ strong {
     max-height: 40vh;
   }
 }
+
+
+.scene-5-generic {
+  height: 100svh; /* modern */
+  height: 100dvh; /* dynamic fallback */
+  height: 100vh;  /* classic fallback */
+  background: linear-gradient(0deg, #e0e0e0 0%, #e0e0e0 50%, #2d2d2d 100%);
+}
+
+
+.scene-5-clouds-generic {
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  height: 35dvh;
+}
+
+.train-cloud-generic {
+  width: 10dvw;
+  height: auto;
+}
+
+#bird-1-generic,
+#bird-2-generic,
+#bird-3-generic,
+#bird-4-generic {
+  visibility: hidden;
+}
+
+.train-generic {
+  width: 100dvw;
+}
+
+.end-text-container {
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.end-text-container h2 {
+    font-size: 1.5rem;
+  }

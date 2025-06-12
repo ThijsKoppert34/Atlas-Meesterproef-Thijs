@@ -27,7 +27,8 @@ tlScene1
   .to(".tree-2", { x: "250vw", scale: 10, duration: 3 }, 0.2)
   .to(".bike", { x: "-175vw", scale: 20, duration: 3 }, 0.2)
   .to(".house", { scale: 50, duration: 3 }, 0.2)
-  .to(".scene-1-transition", { opacity: 1 }, 1);
+  .to(".scene-1-transition", { opacity: 1 }, 1)
+  .to(".scene-1-transition-generic", {opacity: 1 }, 1);
 
 
 // ==============================
@@ -489,4 +490,90 @@ document.querySelectorAll('.story-block').forEach((block, index) => {
   });
 });
  
+
+// ==============================
+// scene 5 generic
+// ==============================
+
+let tlCloudGeneric = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".scene-5-train-generic",
+    start: "top 80%",
+    end: "top 35%",
+    scrub: 3,
+    // markers: true,
+  },
+});
+
+tlCloudGeneric
+  .fromTo(
+    ".train-cloud-1-generic",
+    { opacity: 0, y: "25dvh" },
+    { opacity: 1, y: 10, duration: 1 },
+    0
+  )
+  .fromTo(
+    ".train-cloud-2-generic",
+    { opacity: 0, y: "25dvh" },
+    { opacity: 1, y: 50, duration: 1 },
+    0.2
+  )
+  .fromTo(
+    ".train-cloud-3-generic",
+    { opacity: 0, y: "25dvh" },
+    { opacity: 1, y: 90, duration: 1 },
+    0.4
+  )
+  .fromTo(
+    ".train-cloud-4-generic",
+    { opacity: 0, y: "25dvh" },
+    { opacity: 1, y: 20, duration: 1 },
+    0.6
+  );
+
+// train animation
+let tlTrainGeneric = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".scene-5-train-generic",
+    start: "top 80%",
+    end: "top 35%",
+    scrub: 3,
+    // markers: true,
+  },
+});
+
+tlTrainGeneric
+  .fromTo(".train-generic", { x: "100dvw" }, { x: "-100dvw" }, 0);
+
+// cloud to bird morph
+let tlBirdGeneric = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".scene-5-clouds-generic",
+    start: "top top",
+    endTrigger: ".scene-5-generic",
+    end: "bottom bottom",
+    scrub: 3,
+    // markers: true,
+  },
+});
+
+tlBirdGeneric
+  .to("#train-cloud-1-generic", { morphSVG: "#bird-1-generic", ease: "power1.inOut" })
+  .to("#train-cloud-2-generic", { morphSVG: "#bird-2-generic", ease: "power1.inOut" })
+  .to("#train-cloud-3-generic", { morphSVG: "#bird-3-generic", ease: "power1.inOut" })
+  .to("#train-cloud-4-generic", { morphSVG: "#bird-4-generic", ease: "power1.inOut" });
  
+
+gsap.fromTo(".end-text-generic",
+  {opacity: 0},
+  {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".scene-5-generic",
+      start: "top 10%",
+      end: "bottom bottom",
+      scrub: 6,
+      markers: true,
+    }
+  }
+);
