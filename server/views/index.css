@@ -16,7 +16,6 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
   color: #212121;
 
   .sidebar-content {
-
     position: sticky;
     top: 2rem;
     height: fit-content;
@@ -26,20 +25,19 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
     }
 
     form {
-      margin:0;
+      margin: 0;
 
       legend {
         padding-bottom: 0.5rem;
       }
 
       li {
-
         white-space: nowrap;
 
         label {
           cursor: pointer;
         }
-        
+
         & + li a {
           border-top: none;
           border-bottom: 1px solid #212121;
@@ -212,7 +210,7 @@ footer {
 }
 
 .straat-path {
-  stroke: #F1BD1E;
+  stroke: #f1bd1e;
   fill: none;
   transform-origin: top left;
   transition: stroke 0.3s ease;
@@ -295,7 +293,7 @@ h1 {
   color: white;
 }
 
-.story p{
+.story p {
   font-size: 1.5em;
 }
 
@@ -335,7 +333,6 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-
 .uitgelicht {
   padding: 0rem;
   background-color: #f2f2f2;
@@ -353,21 +350,27 @@ button:hover {
 }
 
 .uitgelicht ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2em;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   list-style: none;
-  margin: 0;
 }
 
 .uitgelicht li {
   border-right: 1px solid #212121;
-  width: 30%;
+  width: 100%;
   height: 14em;
   display: flex;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.uitgelicht li:hover {
+  cursor: pointer;
 }
 
 .uitgelicht li a {
@@ -375,13 +378,14 @@ button:hover {
   gap: 2rem;
 }
 
-.uitgelicht li a span{
-  justify-self: flex-start;
+.uitgelicht li a span {
+  text-align: center;
 }
 
 .uitgelicht li:hover {
-  transform: translateY(-10px);
+  background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  scale: 1.05;
 }
 
 .uitgelicht a {
@@ -428,5 +432,4 @@ button:hover {
     width: 100%;
     text-align: center;
   }
-
 }
