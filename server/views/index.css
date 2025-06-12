@@ -252,7 +252,7 @@ image {
 /* intro */
 
 h1 {
-  font-size: clamp(2rem, 5vw + 1rem, 6rem);
+  font-size: clamp(2rem, 4vw + 1rem, 6rem);
   font-weight: bold;
   font-family: "Merienda", cursive;
   text-align: center;
@@ -294,6 +294,10 @@ h1 {
   text-align: center;
   color: white;
   font-family: "Noto Serif", serif;
+}
+
+.story p{
+  font-size: 1.5em;
 }
 
 .story-step {
