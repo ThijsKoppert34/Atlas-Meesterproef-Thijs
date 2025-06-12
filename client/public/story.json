@@ -1,68 +1,70 @@
 {
-    "personen": [
-      {
-        "naam": "Leo de Vries",
-        "familie": {
-          "id": "familie",
-          "title": "Familie van Leo",
-          "text": "Leo de Vries, zoon van lijstenfabrikant en kunstschilder Melchia de Vries en Marianne Heertje uit Veendam, had vier broers: Marcus, Johan, Frits en Philip. Zijn moeder en broers werden door de nazi’s vermoord; zijn verloofde Ida overleefde de oorlog evenmin.",
-          "svg": "/client/SVG/gezin5kids.svg"
-        },
-        "beroep": {
-          "id": "beroepen",
-          "title": "Opleiding en werk",
-          "text": "Na het afronden van de lagere school volgde Leo een driejarige HBS-opleiding. Hij werd in 1921 vrijgesteld van militaire dienst vanwege broederdienst. In de oorlog werkte Leo als kantoor- en bankbediende bij de Rotterdamsche Bankvereeniging.",
-          "svg": "/client/SVG/bankmeneer.svg"
-        },
-        "verhaal": {
-          "id": "verhaal",
-          "title": "Oorlogsjaren en overlijden",
-          "text": "Leo verhuisde in 1940 van de Herengracht naar Oosterpark 28 huis. Ondanks een nieraandoening die zijn deportatie tijdelijk voorkwam, werd Leo in februari 1943 alsnog naar Westerbork gedeporteerd. Hij verbleef daar een opmerkelijk lange tijd, maar werd uiteindelijk op 3 maart 1944 op transport gezet naar Auschwitz, waar hij op 6 maart 1944 bij aankomst werd vermoord.",
-          "svg": "verhaal.svg"
-        }
+  "personen": [
+    {
+      "naam": "Leo de Vries",
+      "familie": {
+        "id": "familie",
+        "title": "Familie van Leo",
+        "text": "Leo de Vries, zoon van lijstenfabrikant en kunstschilder Melchia de Vries en Marianne Heertje uit Veendam, had vier broers: Marcus, Johan, Frits en Philip. Zijn moeder en broers werden door de nazi’s vermoord; zijn verloofde Ida overleefde de oorlog evenmin.",
+        "svg": "/client/SVG/gezin5kids.svg"
       },
-      {
-        "naam": "Jozeph van den Bergh",
-        "familie": {
-          "id": "familie",
-          "title": "Familie van Jozeph",
-          "text": "Jozeph was de zoon van Levie van den Bergh en Betje Polak. Zijn ouders overleden al in de jaren '30, nog voor de oorlog. Jozeph had een broer, Hartog, die met zijn gezin de oorlog niet overleefde. Hartog woonde op de Ruyschstraat 52-3 en werd vermoord in Sobibor in 1943. Jozeph bleef ongehuwd en kinderloos.",
-          "svg": "/client/SVG/tweebroers.svg"
-        },
-        "beroep": {
-          "id": "beroepen",
-          "title": "Beroep en werkleven",
-          "text": "Jozeph was kantoorbediende van beroep. In 1915 werd hij voor militaire dienst geschikt verklaard, en hij woonde op dat moment aan de Zeeburgerkade. Later verhuisde hij naar de Pretoriusstraat 98, waar hij woonde vanaf 1936 tot in de oorlogsjaren.",
-          "svg": "/client/SVG/manachterbureau.svg"
-        },
-        "verhaal": {
-          "id": "verhaal",
-          "title": "Deportatie en dood",
-          "text": "Jozeph werd in maart 1943 naar Kamp Vught gedeporteerd en kort daarna op transport gesteld naar Sobibor. Op 26 maart 1943 werd hij daar vermoord. Zijn naam wordt herdacht op de gedenksteen voor omgekomen bewoners van de Pretoriusstraat.",
-          "svg": "verhaal.svg"
-        }
+      "beroep": {
+        "id": "beroepen",
+        "title": "Opleiding en werk",
+        "text": "Na het afronden van de lagere school volgde Leo een driejarige HBS-opleiding. Hij werd in 1921 vrijgesteld van militaire dienst vanwege broederdienst. In de oorlog werkte Leo als kantoor- en bankbediende bij de Rotterdamsche Bankvereeniging.",
+        "svg": "/client/SVG/bankmeneer.svg"
       },
-      {
-        "naam": "Mozes Zurel en gezin",
-        "familie": {
-          "id": "familie",
-          "title": "Gezin Zurel",
-          "text": "Mozes Zurel (1910, Amsterdam), zoon van Benedictus Zurel en Celina Roselaar, kwam uit een gezin van twaalf kinderen. In 1933 trouwde hij met Kaatje Dooseman; zij kregen drie zonen: Robert, André en Alfred (de enige overlevende). Zowel bij Mozes’ als Kaatjes familie kwamen meerdere broers en zussen om in de oorlog.",
-          "svg": "/client/SVG/familievan5.svg"
-        },
-        "beroep": {
-          "id": "beroepen",
-          "title": "Beroep en diensttijd",
-          "text": "Mozes was op jonge leeftijd werkzaam als banketbakker en later als lompensorteerder. In 1929 werd hij goedgekeurd voor militaire dienst, waarbij hij hoopte bij de wielrijders geplaatst te worden, maar uiteindelijk terechtkwam bij het Achttiende Regiment in Amersfoort. In de jaren voor de oorlog woonde het gezin korte tijd in Haarlem en daarna in Amsterdam, onder andere op de Derde Oosterparkstraat 125-1.",
-          "svg": "/client/SVG/bakker.svg"
-        },
-        "verhaal": {
-          "id": "verhaal",
-          "title": "Deportatie en herinnering",
-          "text": "Op 20 januari 1943 werd het gezin Zurel gedeporteerd naar Kamp Vught. Alfred, de jongste zoon, werd achtergelaten omdat hij ziek was. Zijn leven werd gered doordat hij werd opgevangen door een buurvrouw en later door een agent naar zijn oom en tante werd gebracht. Op 6 juni 1943 werden Mozes, Kaatje, Robert en André via Westerbork naar Sobibor gestuurd, waar zij op 11 juni 1943 bij aankomst werden vergast. Alfred groeide op bij zijn pleegouders en worstelde in zijn jeugd met nachtmerries over de traumatische scheiding van zijn gezin. Hij vertelde later zijn verhaal bij Namen en Nummers.",
-          "svg": "verhaal.svg"
-        }
+      "verhaal": {
+        "id": "verhaal",
+        "title": "Oorlogsjaren en overlijden",
+        "text": "Leo verhuisde in 1940 van de Herengracht naar Oosterpark 28 huis. Ondanks een nieraandoening die zijn deportatie tijdelijk voorkwam, werd Leo in februari 1943 alsnog naar Westerbork gedeporteerd. Hij verbleef daar een opmerkelijk lange tijd, maar werd uiteindelijk op 3 maart 1944 op transport gezet naar Auschwitz, waar hij op 6 maart 1944 bij aankomst werd vermoord.",
+        "svg": "verhaal.svg",
+        "straat": "Oosterpark 28"
       }
-    ]
-  }
-  
+    },
+    {
+      "naam": "Jozeph van den Bergh",
+      "familie": {
+        "id": "familie",
+        "title": "Familie van Jozeph",
+        "text": "Jozeph was de zoon van Levie van den Bergh en Betje Polak. Zijn ouders overleden al in de jaren '30, nog voor de oorlog. Jozeph had een broer, Hartog, die met zijn gezin de oorlog niet overleefde. Hartog woonde op de Ruyschstraat 52-3 en werd vermoord in Sobibor in 1943. Jozeph bleef ongehuwd en kinderloos.",
+        "svg": "/client/SVG/tweebroers.svg"
+      },
+      "beroep": {
+        "id": "beroepen",
+        "title": "Beroep en werkleven",
+        "text": "Jozeph was kantoorbediende van beroep. In 1915 werd hij voor militaire dienst geschikt verklaard, en hij woonde op dat moment aan de Zeeburgerkade. Later verhuisde hij naar de Pretoriusstraat 98, waar hij woonde vanaf 1936 tot in de oorlogsjaren.",
+        "svg": "/client/SVG/manachterbureau.svg"
+      },
+      "verhaal": {
+        "id": "verhaal",
+        "title": "Deportatie en dood",
+        "text": "Jozeph werd in maart 1943 naar Kamp Vught gedeporteerd en kort daarna op transport gesteld naar Sobibor. Op 26 maart 1943 werd hij daar vermoord. Zijn naam wordt herdacht op de gedenksteen voor omgekomen bewoners van de Pretoriusstraat.",
+        "svg": "verhaal.svg",
+        "straat": "Pretoriusstraat 98"
+      }
+    },
+    {
+      "naam": "Mozes Zurel en gezin",
+      "familie": {
+        "id": "familie",
+        "title": "Gezin Zurel",
+        "text": "Mozes Zurel (1910, Amsterdam), zoon van Benedictus Zurel en Celina Roselaar, kwam uit een gezin van twaalf kinderen. In 1933 trouwde hij met Kaatje Dooseman; zij kregen drie zonen: Robert, André en Alfred (de enige overlevende). Zowel bij Mozes’ als Kaatjes familie kwamen meerdere broers en zussen om in de oorlog.",
+        "svg": "/client/SVG/familievan5.svg"
+      },
+      "beroep": {
+        "id": "beroepen",
+        "title": "Beroep en diensttijd",
+        "text": "Mozes was op jonge leeftijd werkzaam als banketbakker en later als lompensorteerder. In 1929 werd hij goedgekeurd voor militaire dienst, waarbij hij hoopte bij de wielrijders geplaatst te worden, maar uiteindelijk terechtkwam bij het Achttiende Regiment in Amersfoort. In de jaren voor de oorlog woonde het gezin korte tijd in Haarlem en daarna in Amsterdam, onder andere op de Derde Oosterparkstraat 125-1.",
+        "svg": "/client/SVG/bakker.svg"
+      },
+      "verhaal": {
+        "id": "verhaal",
+        "title": "Deportatie en herinnering",
+        "text": "Op 20 januari 1943 werd het gezin Zurel gedeporteerd naar Kamp Vught. Alfred, de jongste zoon, werd achtergelaten omdat hij ziek was. Zijn leven werd gered doordat hij werd opgevangen door een buurvrouw en later door een agent naar zijn oom en tante werd gebracht. Op 6 juni 1943 werden Mozes, Kaatje, Robert en André via Westerbork naar Sobibor gestuurd, waar zij op 11 juni 1943 bij aankomst werden vergast. Alfred groeide op bij zijn pleegouders en worstelde in zijn jeugd met nachtmerries over de traumatische scheiding van zijn gezin. Hij vertelde later zijn verhaal bij Namen en Nummers.",
+        "svg": "verhaal.svg",
+        "straat": "Derde Oosterparkstraat 125-1"
+      }
+    }
+  ]
+}
