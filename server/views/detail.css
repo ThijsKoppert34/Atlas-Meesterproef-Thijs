@@ -569,7 +569,7 @@ strong {
   justify-content: space-between;
   padding: 5rem 10vw;
   background: #f5f5f5;
-  gap: 4rem;
+  gap: 2rem;
   overflow: hidden;
   text-align: left;
 }
@@ -587,9 +587,9 @@ strong {
 }
  
 .story-block img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
-  max-height: 60vh;
+  max-height: 50vh;
   object-fit: contain;
   border-radius: 1rem;
 }
@@ -597,7 +597,7 @@ strong {
 .story-block .text-content {
   flex: 1;
   opacity: 0;
-  transform: translateX(-100px);
+  /* transform: translateX(-100px); */
   transition: all 0.8s ease-out;
 }
  
@@ -622,7 +622,7 @@ strong {
 }
 
 /* Responsive verbeteringen */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .story-block {
     padding: 3rem 5vw;
   }
@@ -636,7 +636,7 @@ strong {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .story-block {
     flex-direction: column;
     text-align: center;

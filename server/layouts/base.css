@@ -38,12 +38,22 @@ header {
 /* Standaard links en knoppen */
 .menu a, .dropbtn {
   text-decoration: none;
-  color: #333;
+  color: #fff; /* tekstkleur naar wit */
   padding: 8px 12px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
+  transition: color 0.3s;
+}
+
+/* Hover effect op menu items */
+.menu a:hover{
+  color: #f0f0f0;
+}
+
+.dropbtn:hover{
+  color: black;
 }
 
 /* Dropdown container */
@@ -76,21 +86,7 @@ header {
 
 /* Hover effect voor dropdown items */
 .dropdown-content li a:hover {
-  background-color: #f0f0f0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  list-style: none;
-  padding: 10px 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: black;
 }
 
 /* Specifiek voor de laatste dropdown (verhalen) */
@@ -99,11 +95,9 @@ header {
   right: 0;
 }
 
-
 /* Voor desktop: open dropdown bij hover */
 @media (min-width: 768px) {
   .dropdown:hover .dropdown-content {
       display: block;
   }
 }
-
