@@ -1,11 +1,22 @@
 # Meesterproef Atlas Oosterpark
 
 **Atlas Oosterpark** 
-<!-- Add detailed project description here -->
 
----
+## Description
 
-## Installation
+Deze site is gemaakt om verhalen te vertellen van Joodse slachtoffers van de Tweede Wereldoorlog. Dit doen wij door de gebruiker langzaam in te laten zoomen op een huis waarna je hun specifieke verhaal kan zien door middel van 'scrollytelling'. Wij hebben 2 versies gemaakt, Oosterpark 13 hebben we specifiek uitgewerkt voor dat huis en we hebben ook een generiekere versie die momenteel op 3 huizen gebruikt wordt Oosterpark 28, Pretoriusstraat straat 98, derde oosterparkstraat 125 1.
+
+## Getting Started
+
+### Dependencies
+
+* nodejs
+
+### Installing
+
+* Navigeer naar nodejs.org en installeer de NodeJS ontwikkelomgeving. Kies voor NodeJS 22.13.1 with long-term support, download de benodigde bestanden en doorloop het installatieproces.
+
+### Executing program
 
 ```bash
 # Install project dependencies
@@ -15,23 +26,13 @@ npm install
 npm run dev
 ```
 
----
+## Authors
 
-## Usage
-
-<!-- Describe how users should interact with or use the application -->
-
----
-
-## Team
-
-- **[Christain van Drunen]** – Role / Responsibilities
+- **[Christian van Drunen]** – Role / Responsibilities
 - **[Joost Locher]** – Role / Responsibilities
 - **[Mischa Melkert]** – Role / Responsibilities
 - **[Thijs Koppert]** – Role / Responsibilities
 
----
+## Acknowledgments
 
-## License
-
-<!-- Add a more detailed project description here -->
+Inspiration, code snippets, etc.
