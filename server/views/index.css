@@ -292,6 +292,7 @@ h1 {
 
 .overlay-screen svg path {
   stroke-width: 6;
+  stroke: #3e2c00;
 }
 
 .story {
@@ -321,24 +322,24 @@ h1 {
   gap: 1em;
 }
 
-button {
-  padding: 12px 24px;
-  background-color: #3c4a55;
+.button-container button {
+  padding: 14px 28px;
+  background-color: #212121;
   color: white;
   font-size: 1.1em;
-  border: 2px solid white;
+  border: 2px solid #F1BD1E;
   border-radius: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  font-family: "Merienda", cursive;
 }
 
-button:hover {
-  background-color: white;
-  color: #3c4a55;
-  border-color: #3c4a55;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.button-container button:hover {
+  background-color: #333333;
+  color: #F1BD1E;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .uitgelicht {
