@@ -45,6 +45,8 @@ header {
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s;
+
+  padding: 1em;
 }
 
 /* Hover effect op menu items */
@@ -54,6 +56,7 @@ header {
 
 .dropbtn:hover{
   color: black;
+  background-color: #f0f0f0;;
 }
 
 /* Dropdown container */
