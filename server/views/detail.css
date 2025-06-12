@@ -42,10 +42,9 @@ section {
 .adress {
   position: relative;
   text-align: center;
-
+    padding-top: 2rem;
+    padding-bottom: 1rem;
   font-size: var(--font-h1);
-  padding: .5rem;
-
   z-index: 2;
 }
 

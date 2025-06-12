@@ -46,7 +46,6 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
         }
         a {
           color: #212121;
-          font-family: "SpaceMono";
           text-decoration: none;
           border-top: 1px solid #212121;
           border-bottom: 1px solid #212121;
@@ -254,8 +253,9 @@ image {
 h1 {
   font-size: clamp(2rem, 5vw + 1rem, 6rem);
   font-weight: bold;
-  font-family: "Merienda", cursive;
   text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin: 0 0 1rem 0; /* <-- dit voegt onderruimte toe */
 }
 
@@ -293,7 +293,6 @@ h1 {
   max-width: 40em;
   text-align: center;
   color: white;
-  font-family: "Noto Serif", serif;
 }
 
 .story-step {
@@ -316,7 +315,6 @@ button {
   padding: 12px 24px;
   background-color: #3c4a55;
   color: white;
-  font-family: "Merienda", cursive;
   font-size: 1.1em;
   border: 2px solid white;
   border-radius: 12px;
