@@ -3,7 +3,6 @@ import "./index.css";
 console.log("Hello, world123");
  
 document.addEventListener("DOMContentLoaded", function () {
-  // Verzamel alle gele shapes
   const yellowShapes = Array.from(
     document.querySelectorAll(
       'svg [fill="#F9EA3E"], svg [fill="#f9ea3e"], svg .cls-1, svg .cls-2',
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   yellowShapes.forEach((el) => el.classList.add("yellow-anim"));
  
-  // Shuffle en animatie zoals eerder
   for (let i = yellowShapes.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [yellowShapes[i], yellowShapes[j]] = [yellowShapes[j], yellowShapes[i]];
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   yellowShapes.forEach((shape, i) => {
     setTimeout(() => {
       shape.setAttribute("fill", "#000");
-      // Optioneel: verwijder de class zodat CSS fill niet meer geldt
       shape.classList.remove("cls-1", "cls-2");
     }, i * 500);
   });
@@ -83,7 +80,6 @@ function showStep(index) {
   steps.forEach((step) => step.classList.remove("active"));
   steps[index].classList.add("active");
  
-  // Titel alleen tonen bij eerste stap
   if (index === 0) {
     title.style.display = "block";
     prevBtn.style.display = "none";
@@ -98,7 +94,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     currentStep++;
     showStep(currentStep);
   } else {
-    overlay.style.display = "none"; // verberg overlay
+    overlay.style.display = "none";
   }
 });
  
@@ -109,30 +105,25 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   }
 });
  
-// Zorg dat de eerste stap goed wordt weergegeven bij laden
 showStep(currentStep);
  
  
-// Zorgt ervoor dat dropdowns werken op mobiel (klik ipv hover)
 document.querySelectorAll('.dropbtn').forEach(button => {
   button.addEventListener('click', function (e) {
       e.preventDefault();
       const dropdown = this.nextElementSibling;
       const isOpen = dropdown.style.display === 'block';
  
-      // Eerst alle dropdowns sluiten
       document.querySelectorAll('.dropdown-content').forEach(menu => {
           menu.style.display = 'none';
       });
  
-      // Open huidige als die nog niet open is
       if (!isOpen) {
           dropdown.style.display = 'block';
       }
   });
 });
  
-// Sluit dropdowns als je ergens anders klikt
 document.addEventListener('click', function (e) {
   if (!e.target.closest('.dropdown')) {
       document.querySelectorAll('.dropdown-content').forEach(menu => {

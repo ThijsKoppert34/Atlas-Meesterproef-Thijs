@@ -7,9 +7,7 @@
 @import '../server/layouts/base.css';
 @import '../server/views/index.css';
 @import '../server/views/street.css';
- 
-/* component styling */
-@import '../server/components/card/card.css';
+
  
 :root {
   --color-black: #000000;
