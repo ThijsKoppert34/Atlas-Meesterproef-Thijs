@@ -31,7 +31,6 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  height: 80vh;
   width: max-content;
   animation: street-scroll linear infinite;
 }
