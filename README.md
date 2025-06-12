@@ -4,7 +4,13 @@
 
 ## Description
 
-Deze site is gemaakt om verhalen te vertellen van Joodse slachtoffers van de Tweede Wereldoorlog. Dit doen wij door de gebruiker langzaam in te laten zoomen op een huis waarna je hun specifieke verhaal kan zien door middel van 'scrollytelling'. Wij hebben 2 versies gemaakt, Oosterpark 13 hebben we specifiek uitgewerkt voor dat huis en we hebben ook een generiekere versie die momenteel op 3 huizen gebruikt wordt Oosterpark 28, Pretoriusstraat straat 98, derde oosterparkstraat 125 1.
+Deze website is ontwikkeld om de verhalen te vertellen van Joodse slachtoffers uit de Tweede Wereldoorlog, afkomstig uit de Oosterparkbuurt. Dat doen we door de gebruiker langzaam in te laten zoomen op een huis, waarna het persoonlijke verhaal van de bewoners zichtbaar wordt via zogeheten scrollytelling – een combinatie van beeld, tekst en animatie die meebeweegt terwijl je scrollt.
+
+We hebben twee versies van de detailpagina gemaakt:
+* Oosterpark 13 is volledig uitgewerkt met een uniek, specifiek verhaal.
+* Daarnaast hebben we een generiekere variant ontwikkeld die momenteel wordt gebruikt voor drie adressen: Oosterpark 28, Pretoriusstraat 98 en Derde Oosterparkstraat 125-1.
+
+
 
 ## Getting Started
 
