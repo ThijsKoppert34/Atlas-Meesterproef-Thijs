@@ -5,6 +5,10 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
   grid-template-columns: minmax(0rem, 0rem) auto 1fr;
 }
 
+
+
+
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: minmax(17rem, 17rem) auto 1fr;
@@ -14,64 +18,64 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
 .sidebar {
   background-color: #f2f2f2;
   color: #212121;
-
-  .sidebar-content {
-
-    position: sticky;
-    top: 2rem;
-    height: fit-content;
-
-    h3 {
-      padding: 1rem;
-    }
-
-    form {
-      margin:0;
-
-      legend {
-        padding-bottom: 0.5rem;
-      }
-
-      li {
-
-        white-space: nowrap;
-
-        label {
-          cursor: pointer;
-        }
-        
-        & + li a {
-          border-top: none;
-          border-bottom: 1px solid #212121;
-        }
-        a {
-          color: #212121;
-          text-decoration: none;
-          border-top: 1px solid #212121;
-          border-bottom: 1px solid #212121;
-
-          width: 86%;
-
-          padding: 1.2em;
-          display: inline-block; /* Zorgt dat transform en scale goed werken */
-          transition: all 0.3s ease-in-out; /* Vloeiender animatie */
-        }
-
-        li:last-child a {
-          border-bottom: 1px solid #212121;
-        }
-
-        a:hover {
-          transform: scale(1.05);
-          background-color: white;
-          border: none;
-
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtiele schaduw voor diepte */
-        }
-      }
-    }
-  }
 }
+
+.sidebar-content {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.sidebar-content h3 {
+  padding: 1rem;
+}
+
+.sidebar-content form {
+  margin: 0;
+}
+
+.sidebar-content form legend {
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-content form li {
+  white-space: nowrap;
+}
+
+.sidebar-content form li label {
+  cursor: pointer;
+}
+
+/* Let op: & + li a betekent: als li direct na een andere li komt */
+.sidebar-content form li + li a {
+  border-top: none;
+  /* border-bottom: 1px solid #212121; */
+}
+
+.sidebar-content form li a {
+  color: #212121;
+  text-decoration: none;
+  border-top: 1px solid #212121;
+  border-bottom: 1px solid #212121;
+  width: 86%;
+  padding: 1.2em;
+  display: inline-block; /* Zorgt dat transform en scale goed werken */
+  transition: all 0.3s ease-in-out; /* Vloeiender animatie */
+}
+
+/* Specifiek voor laatste li */
+.sidebar-content form li:last-child a {
+  border-bottom: 1px solid #212121;
+}
+
+/* Hover state van de link */
+.sidebar-content form li a:hover {
+  transform: scale(1.05);
+  background-color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 .toggle-button {
   background: var(--color-gray-20);
@@ -406,6 +410,21 @@ button:hover {
     width: 80%;
     height: auto;
     padding: 2em 0;
+    border: 1px solid #212121;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .uitgelicht li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .uitgelicht li a {
+    width: 100%;
+    text-align: center;
+    padding: 1.2em;
+    box-sizing: border-box;
+    border: none; /* border weghalen van de a */
   }
 
   .grid-wrapper {
@@ -417,15 +436,27 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 0;
   }
 
   .sidebar-content form ul li {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
+    border: 1px solid #212121;
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .sidebar-content form ul li a {
     width: 100%;
     text-align: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    padding: 1.2em;
+    box-sizing: border-box;
   }
 
 }
