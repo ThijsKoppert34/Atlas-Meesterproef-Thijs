@@ -4,6 +4,13 @@ section {
   overflow: hidden;
 }
 
+.text{
+  background: gray;
+    border: .5rem solid black;
+    border-style: solid none;
+    padding: 1rem;
+}
+
 .house {
   width: 15dvw;
   height: 45dvh;
@@ -189,7 +196,7 @@ section {
 
 .wedding-text {
   text-align: center;
-  top: 35dvh;
+  top: 25dvh;
   font-size: var(--font-big);
 }
 
@@ -210,6 +217,7 @@ section {
 }
 
 .floor {
+
   background: linear-gradient(
     180deg,
     transparent 0%,
@@ -253,9 +261,8 @@ section {
 
 .children-text {
   text-align: center;
-  top: 15dvh;
+  top: 10dvh;
   font-size: var(--font-big);
-  margin: 2rem;
 }
 
 .grandma-1 {
@@ -270,13 +277,15 @@ section {
 }
 
 .scene-2-children {
-  top: 50dvh;
+  top: 100dvh;
   height: 200dvh;
   width: 100dvw;
 }
 
-.scene-2-grandmas {
-  top: 125dvh;
+
+.scene-2-grandmas{
+    top: 175dvh;
+
   height: 200dvh;
   width: 100dvw;
 }
@@ -296,7 +305,6 @@ section {
   text-align: center;
   top: 20dvh;
   font-size: var(--font-big);
-  margin: 2rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -306,7 +314,7 @@ section {
   }
 
   .wedding-text {
-    top: 30dvh;
+    top: 25dvh;
   }
 
   .bride {
@@ -360,6 +368,10 @@ section {
   .floor-3 {
     top: 16dvh;
   }
+
+  .grandma-text{
+    top:15dvh;
+  }
 }
 
 .scene-3 {
@@ -380,7 +392,6 @@ section {
   text-align: center;
   top: 50dvh;
   font-size: var(--font-big);
-  margin: 2rem;
 }
 
 .floor-4 {
@@ -423,7 +434,7 @@ section {
 .dentist-text-1,
 .dentist-text-2,
 .dentist-text-3 {
-  top: 50%;
+  top: 45%;
 }
 
 @media screen and (max-width: 800px) {
@@ -445,7 +456,7 @@ section {
   .dentist-text-1,
   .dentist-text-2,
   .dentist-text-3 {
-    top: 35%;
+    top: 25%;
   }
 }
 

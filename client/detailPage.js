@@ -1,5 +1,8 @@
 gsap.registerPlugin(SplitText, ScrollTrigger, MorphSVGPlugin);
 
+// ==============================
+// scene 1
+// ==============================
 let tlScene1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".scene-1",
@@ -26,7 +29,10 @@ tlScene1
   .to(".house", { scale: 50, duration: 3 }, 0.2)
   .to(".scene-1-transition", { opacity: 1 }, 1);
 
-// chandelier
+
+// ==============================
+// scene 2
+// ==============================
 gsap.timeline({
   scrollTrigger: {
     trigger: ".scene-2",
@@ -38,16 +44,17 @@ gsap.timeline({
   },
 });
 
+// ==============================
+// scene 2 wedding
+// ==============================
 const splitWedding = new SplitText(".wedding-text", { type: "words, chars" });
 gsap.set(splitWedding.chars, { opacity: 0 });
-
-// wedding scene
 gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-2-wedding",
       start: "top top",
-      end: "+=800vh",
+      end: "+=1500vh",
       pin: true,
       scrub: 2,
     },
@@ -68,15 +75,17 @@ gsap
     0
   );
 
+// ==============================
+// scene 2 children
+// ==============================
 const splitChildren = new SplitText(".children-text", { type: "words, chars" });
 gsap.set(splitChildren.chars, { opacity: 0 });
-// children scene
 gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-2-children",
       start: "top top",
-      end: "+=1000vh",
+      end: "+=1750vh",
       pin: true,
       scrub: 2,
       // markers: true
@@ -98,6 +107,9 @@ gsap
     0
   );
 
+// ==============================
+// scene 2 grandmas
+// ==============================
 const splitGrandma = new SplitText(".grandma-text", { type: "words, chars" });
 gsap.set(splitGrandma.chars, { opacity: 0 });
 gsap
@@ -105,7 +117,7 @@ gsap
     scrollTrigger: {
       trigger: ".scene-2-grandmas",
       start: "top top",
-      end: "+=1000vh",
+      end: "+=1750vh",
       pin: true,
       scrub: 2,
       // markers: true
@@ -124,6 +136,9 @@ gsap
     0
   );
 
+// ==============================
+// scene 3
+// ==============================
 gsap
   .timeline({
     scrollTrigger: {
@@ -133,7 +148,6 @@ gsap
       // end: "+=2500vh",
       end: "top 45%",
       pin: ".ground-4",
-      // pinSpacing: "false",
       scrub: 2,
       // markers: true,
     },
@@ -144,7 +158,6 @@ gsap
     { x: 0, duration: 0.3, stagger: { each: 0.2, from: "end" } },
     0
   )
-  // .fromTo(".customer:nth-child(-n+4)", {x:"-150vw"}, {x: 0, duration: 0.3,}, 0.3)
   .to(".customer:nth-child(-n+6)", { scaleX: -1, duration: 0.1 }, 2.2)
   .set(".customer:nth-child(-n+6)", { scaleX: -1, duration: 0.1 }, 2.2)
   .fromTo(
@@ -159,7 +172,7 @@ gsap
     scrollTrigger: {
       trigger: ".scene-3-text-1",
       start: "top top",
-      end: "+=500dvh",
+      end: "+=1050dvh",
       pin: true,
       scrub: 2,
       // markers: true
@@ -167,7 +180,7 @@ gsap
   })
   .fromTo(
     ".dentist-text-1",
-    { x: "-150vw" },
+    { x: "-125vw" },
     {
       x: 0,
       duration: 0.1,
@@ -175,14 +188,14 @@ gsap
     0
   )
   .to({}, { duration: 0.8 })
-  .to(".dentist-text-1", { x: "150vw" }, 0.8);
+  .to(".dentist-text-1", { x: "125vw" }, 0.8);
 
 gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-3-text-2",
       start: "top top",
-      end: "+=500dvh",
+      end: "+=1050dvh",
       pin: true,
       scrub: 2,
       // markers: true
@@ -190,7 +203,7 @@ gsap
   })
   .fromTo(
     ".dentist-text-2",
-    { x: "-150vw" },
+    { x: "-125vw" },
     {
       x: 0,
       duration: 0.1,
@@ -198,14 +211,14 @@ gsap
     0
   )
   .to({}, { duration: 0.8 })
-  .to(".dentist-text-2", { x: "150vw" }, 0.8);
+  .to(".dentist-text-2", { x: "125vw" }, 0.8);
 
 gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-3-text-3",
       start: "top top",
-      end: "+=500dvh",
+      end: "+=1050dvh",
       pin: true,
       scrub: 2,
       // markers: true
@@ -213,7 +226,7 @@ gsap
   })
   .fromTo(
     ".dentist-text-3",
-    { x: "-150vw" },
+    { x: "-125vw" },
     {
       x: 0,
       duration: 0.1,
@@ -221,7 +234,7 @@ gsap
     0
   )
   .to({}, { duration: 0.8 })
-  .to(".dentist-text-3", { x: "150vw" }, 0.8);
+  .to(".dentist-text-3", { x: "125vw" }, 0.8);
 
 // ================
 // einde deel joost
