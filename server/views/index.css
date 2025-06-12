@@ -5,10 +5,6 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
   grid-template-columns: minmax(0rem, 0rem) auto 1fr;
 }
 
-
-
-
-
 .grid-wrapper {
   display: grid;
   grid-template-columns: minmax(17rem, 17rem) auto 1fr;
@@ -47,10 +43,8 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
   cursor: pointer;
 }
 
-/* Let op: & + li a betekent: als li direct na een andere li komt */
 .sidebar-content form li + li a {
   border-top: none;
-  /* border-bottom: 1px solid #212121; */
 }
 
 .sidebar-content form li a {
@@ -60,17 +54,15 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
   border-bottom: 1px solid #212121;
   width: 86%;
   padding: 1.2em;
-  display: inline-block; /* Zorgt dat transform en scale goed werken */
-  transition: all 0.3s ease-in-out; /* Vloeiender animatie */
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
 
 }
 
-/* Specifiek voor laatste li */
 .sidebar-content form li:last-child a {
   border-bottom: 1px solid #212121;
 }
 
-/* Hover state van de link */
 .sidebar-content form li a:hover {
   transform: scale(1.05);
   background-color: white;
@@ -146,7 +138,7 @@ footer {
   transform: translate(
     27.5px,
     -31px
-  ); /* Pas eventueel aan voor juiste positionering */
+  );
 }
 
 .link-beuken path {
@@ -173,7 +165,7 @@ footer {
 }
 
 .link-ooster {
-  transform: translate(13px, -136px) rotate(1deg); /* Pas eventueel aan voor juiste positionering */
+  transform: translate(13px, -136px) rotate(1deg);
 }
 
 .link-ooster path {
@@ -262,7 +254,7 @@ h1 {
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  margin: 0 0 1rem 0; /* <-- dit voegt onderruimte toe */
+  margin: 0 0 1rem 0;
 }
 
 .overlay-screen {
@@ -433,12 +425,12 @@ h1 {
     text-align: center;
     padding: 1.2em;
     box-sizing: border-box;
-    border: none; /* border weghalen van de a */
+    border: none;
   }
 
   .grid-wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto; /* Sidebar boven content */
+    grid-template-rows: auto auto;
   }
 
   .sidebar-content form ul {
