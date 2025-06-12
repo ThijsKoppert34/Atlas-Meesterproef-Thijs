@@ -253,14 +253,14 @@ section {
 }
 
 .scene-2-children {
-  top: 50dvh;
+  top: 100dvh;
   height: 200dvh;
   width: 100dvw;
 }
 
 
 .scene-2-grandmas{
-    top: 125dvh;
+    top: 175dvh;
   height: 200dvh;
   width: 100dvw;
 }
