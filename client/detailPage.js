@@ -236,15 +236,27 @@ gsap
   .to({}, { duration: 0.8 })
   .to(".dentist-text-3", { x: "125vw" }, 0.8);
 
-// ================
-// einde deel joost
-// ================
+// ==============================
+// scene 4
+// ==============================
+
+ScrollTrigger.create({
+  trigger: ".scene-4-text",
+  start: "top top",
+  endTrigger: ".scene-4-basement",
+  end: "bottom center",
+  scrub: 3,
+  pin: ".scene-4-text",
+  pinSpacing: false,
+  // markers: true,
+});
 
 // lamp pin
 ScrollTrigger.create({
-  trigger: ".scene-4-basement",
+  trigger: ".scene-4-text",
   start: "top top",
-  end: "bottom top",
+  endTrigger: ".scene-4-basement",
+  end: "bottom center",
   scrub: 3,
   pin: ".lamp-container",
   pinSpacing: false,
@@ -258,23 +270,18 @@ ScrollTrigger.create({
 
 let tlBasement = gsap.timeline({
   scrollTrigger: {
-    trigger: ".scene-4-basement",
-    start: "top top",
-    end: "bottom 80%",
+    trigger: ".scene-4-familie",
+    start: "bottom bottom",
+    endTrigger: ".scene-4-basement",
+    end: "bottom 37%",
     scrub: 3,
     pin: ".scene-4-familie",
     pinSpacing: false,
-    markers: {
-      startColor: "blue",
-      endColor: "pink",
-      fontSize: "18px", fontWeight: "bold", indent: 20
-    },
     // markers: true,
   },
 });
 
 tlBasement
-  // .to("#scene-4-dad", { fill: "pink" }, 0)
   .fromTo(".scene-4-girl",
     { x: "-100dvw"},
     { x:0,
@@ -307,20 +314,20 @@ let tlDark = gsap.timeline({
     trigger: ".scene-4-dark",
     start: "top center",
     end: "top top",
-    scrub: 3,
+    scrub: true,
     // markers: true,
   },
 });
 
 tlDark
-  .to(".scene-4-dark", { backgroundColor: "var(--color-gray-20)" }, 0)
-  .to(".scene-4-basement", { backgroundColor: "var(--color-gray-20)" }, 0)
-  .to("#wire", { fill: "var(--color-gray-20)" }, 0)
-  .to("#bulb", { fill: "var(--color-gray-20)" }, 0)
-  .to("#scene-4-dad", { fill: "var(--color-gray-20)" }, 0)
-  .to("#scene-4-girl", { fill: "var(--color-gray-20)" }, 0)
-  .to("#scene-4-mom", { fill: "var(--color-gray-20)" }, 0)
-  .to("#scene-4-boy", { fill: "var(--color-gray-20)" }, 0)
+.to(".scene-4-dark", { backgroundColor: "var(--color-gray-20)", duration: 1 }, "<")
+.to(".scene-4-basement", { backgroundColor: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#wire", { fill: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#bulb", { fill: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#scene-4-dad", { fill: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#scene-4-girl", { fill: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#scene-4-mom", { fill: "var(--color-gray-20)", duration: 1 }, "<")
+  .to("#scene-4-boy", { fill: "var(--color-gray-20)", duration: 1 }, "<")
   .fromTo(
     ".scene-4-dark p",
     { x: "-150vw" },
@@ -377,16 +384,13 @@ let tlTrain = gsap.timeline({
   scrollTrigger: {
     trigger: ".scene-5-train",
     start: "top 80%",
-    end: "top 20%",
+    end: "top 30%",
     scrub: 3,
     // markers: true,
   },
 });
 
 tlTrain
-  // .to(".scene-4-dark", { backgroundColor: "var(--color-gray-20)" }, 0)
-  // .to(".scene-4-basement", { backgroundColor: "var(--color-gray-20)" }, 0)
-  // .to(".scene-5", { backgroundImage: "linear-gradient(0deg, #e0e0e0 0%, #e0e0e0 50%, #2d2d2d 100%)" }, 0)
   .fromTo(".train", { x: "100dvw" }, { x: "-100dvw" }, 0);
 
 // cloud pin
@@ -444,10 +448,10 @@ tlScene5Names
   .fromTo(".scene-5-names-alive svg", {opacity:0}, {opacity: 1, stagger:0.3},0)
 
 
-// ================
-// generic gedeelte
-// ================
 
+// ==============================
+// generic
+// ==============================
  
 // Selecteer elk blok
 document.querySelectorAll('.story-block').forEach((block, index) => {

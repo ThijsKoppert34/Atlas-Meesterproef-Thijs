@@ -488,13 +488,7 @@ section {
 }
 
 .scene-4-basement {
-  /* height: 100dvh; */
-  /* width: 100dvw; */
-  /* align-items: center; */
-  background-color: rgba(0, 255, 0, 0.1); 
-  /* justify-content: space-between; */
-  height: 100dvw;
-  /* gap: 10rem; */
+  height: 100dvh;
 }
 
 .lamp-container {
@@ -511,14 +505,26 @@ section {
 
 .scene-4-familie {
   width: 100dvw;
+  height: 50dvh;
   border-bottom: 1rem solid var(--color-black);
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   gap: 2rem;
 }
 
-.scene-4-familie svg {
-  width: 7dvw;
+.scene-4-dad, .scene-4-mom {
+  width: 10dvw;
+  height: auto;
+}
+
+.scene-4-boy {
+  width: 8dvw;
+  height: auto;
+}
+
+.scene-4-girl {
+  width: 6dvw;
   height: auto;
 }
 
