@@ -11,7 +11,6 @@ let tlScene1 = gsap.timeline({
     pin: true,
     pinSpacing: true,
     scrub: 2,
-    // markers: true
   },
 });
 
@@ -41,7 +40,6 @@ gsap.timeline({
     end: "bottom bottom",
     pin: ".chandelier",
     scrub: true,
-    // markers: true
   },
 });
 
@@ -89,7 +87,6 @@ gsap
       end: "+=1750vh",
       pin: true,
       scrub: 2,
-      // markers: true
     },
   })
   .set(".woman-1", { scaleX: -1, duration: 0.1 }, 0)
@@ -121,7 +118,6 @@ gsap
       end: "+=1750vh",
       pin: true,
       scrub: 2,
-      // markers: true
     },
   })
   .from(".woman-2", { x: "45vw", duration: 0.3 }, 0.1)
@@ -146,11 +142,9 @@ gsap
       trigger: ".scene-3",
       start: "top top",
       endTrigger: ".scene-4",
-      // end: "+=2500vh",
       end: "top 45%",
       pin: ".ground-4",
       scrub: 2,
-      // markers: true,
     },
   })
   .fromTo(
@@ -176,7 +170,6 @@ gsap
       end: "+=1050dvh",
       pin: true,
       scrub: 2,
-      // markers: true
     },
   })
   .fromTo(
@@ -199,7 +192,6 @@ gsap
       end: "+=1050dvh",
       pin: true,
       scrub: 2,
-      // markers: true
     },
   })
   .fromTo(
@@ -222,7 +214,6 @@ gsap
       end: "+=1050dvh",
       pin: true,
       scrub: 2,
-      // markers: true
     },
   })
   .fromTo(
@@ -241,6 +232,7 @@ gsap
 // scene 4
 // ==============================
 
+// text pin
 ScrollTrigger.create({
   trigger: ".scene-4-text",
   start: "top top",
@@ -249,7 +241,6 @@ ScrollTrigger.create({
   scrub: 3,
   pin: ".scene-4-text",
   pinSpacing: false,
-  // markers: true,
 });
 
 // lamp pin
@@ -261,7 +252,6 @@ ScrollTrigger.create({
   scrub: 3,
   pin: ".lamp-container",
   pinSpacing: false,
-  // markers: true,
   onUpdate: (self) => {
     const swingCount = 4;
     const swing = Math.sin(self.progress * Math.PI * 2 * swingCount) * 4;
@@ -269,6 +259,7 @@ ScrollTrigger.create({
   },
 });
 
+// basement animation
 let tlBasement = gsap.timeline({
   scrollTrigger: {
     trigger: ".scene-4-familie",
@@ -278,7 +269,6 @@ let tlBasement = gsap.timeline({
     scrub: 3,
     pin: ".scene-4-familie",
     pinSpacing: false,
-    // markers: true,
   },
 });
 
@@ -286,25 +276,21 @@ tlBasement
   .fromTo(".scene-4-girl",
     { x: "-100dvw"},
     { x:0,
-      // stagger: 1,
       ease: "power2.out",
     }, ">")
     .fromTo(".scene-4-mom",
     { x: "100dvw"},
     { x:0,
-      // stagger: 1,
-      ease: "power2.out",
+     ease: "power2.out",
     }, ">")
     .fromTo(".scene-4-dad",
     { x: "-100dvw"},
     { x:0,
-      // stagger: 1,
       ease: "power2.out",
     }, ">")
     .fromTo(".scene-4-boy",
     { x: "100dvw"},
     { x:0,
-      // stagger: 1,
       ease: "power2.out",
     }, ">")
 ;
@@ -316,7 +302,6 @@ let tlDark = gsap.timeline({
     start: "top center",
     end: "top top",
     scrub: true,
-    // markers: true,
   },
 });
 
@@ -350,7 +335,6 @@ let tlCloud = gsap.timeline({
     start: "top 80%",
     end: "top 20%",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -387,7 +371,6 @@ let tlTrain = gsap.timeline({
     start: "top 80%",
     end: "top 30%",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -402,7 +385,6 @@ ScrollTrigger.create({
   end: "bottom bottom",
   pin: ".scene-5-clouds",
   pinSpacing: false,
-  // markers: true,
 });
 
 // cloud to bird morph
@@ -413,7 +395,6 @@ let tlBird = gsap.timeline({
     endTrigger: ".scene-5-names",
     end: "bottom bottom",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -430,7 +411,6 @@ let tlScene5Names = gsap.timeline({
     start: "top 80%",
     end: "bottom bottom",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -467,7 +447,6 @@ document.querySelectorAll('.story-block').forEach((block, index) => {
       end: "bottom top",
       scrub: true,
       pin: true,
-      markers: false,
     }
   });
  
@@ -501,7 +480,6 @@ let tlCloudGeneric = gsap.timeline({
     start: "top 80%",
     end: "top 35%",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -538,7 +516,6 @@ let tlTrainGeneric = gsap.timeline({
     start: "top 80%",
     end: "top 35%",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -553,7 +530,6 @@ let tlBirdGeneric = gsap.timeline({
     endTrigger: ".scene-5-generic",
     end: "bottom bottom",
     scrub: 3,
-    // markers: true,
   },
 });
 
@@ -573,7 +549,6 @@ gsap.fromTo(".end-text-generic",
       start: "top 10%",
       end: "bottom bottom",
       scrub: 6,
-      markers: true,
     }
   }
 );

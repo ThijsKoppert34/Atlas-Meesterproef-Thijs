@@ -1,17 +1,3 @@
-/* header */
-/* header {
-  padding: 1rem;
- 
-  background-color: #737c85;
- 
-}
- 
-.logo {
-  width: 8rem;
-} */
-
-
-/* Basis layout header */
 header {
   display: flex;
   justify-content: space-between;
@@ -20,12 +6,10 @@ header {
   background-color: black;
 }
 
-/* Logo */
 .logo {
   height: 50px;
 }
 
-/* Navigatie menu */
 .menu {
   list-style: none;
   display: flex;
@@ -35,21 +19,18 @@ header {
   align-items: center;
 }
 
-/* Standaard links en knoppen */
 .menu a, .dropbtn {
   text-decoration: none;
-  color: #fff; /* tekstkleur naar wit */
+  color: #fff;
   padding: 8px 12px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s;
-
   padding: 1em;
 }
 
-/* Hover effect op menu items */
 .menu a:hover{
   color: #f0f0f0;
 }
@@ -59,12 +40,10 @@ header {
   background-color: #f0f0f0;;
 }
 
-/* Dropdown container */
 .dropdown {
   position: relative;
 }
 
-/* Dropdown inhoud standaard verborgen */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -79,7 +58,6 @@ header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Dropdown links */
 .dropdown-content li a {
   display: block;
   padding: 10px 20px;
@@ -87,18 +65,15 @@ header {
   text-decoration: none;
 }
 
-/* Hover effect voor dropdown items */
 .dropdown-content li a:hover {
   background-color: black;
 }
 
-/* Specifiek voor de laatste dropdown (verhalen) */
 .dropdown:last-child .dropdown-content {
   left: auto;
   right: 0;
 }
 
-/* Voor desktop: open dropdown bij hover */
 @media (min-width: 768px) {
   .dropdown:hover .dropdown-content {
       display: block;
