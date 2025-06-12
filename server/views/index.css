@@ -7,7 +7,7 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
 
 .grid-wrapper {
   display: grid;
-  grid-template-columns: minmax(15rem, 15rem) auto 1fr;
+  grid-template-columns: minmax(17rem, 17rem) auto 1fr;
   transition: grid-template-columns 0.4s cubic-bezier(0, 0, 0, 1);
 }
 
@@ -50,7 +50,7 @@ body:has(#sidebar-toggle:checked) .grid-wrapper {
           border-top: 1px solid #212121;
           border-bottom: 1px solid #212121;
 
-          width: 84%;
+          width: 86%;
 
           padding: 1.2em;
           display: inline-block; /* Zorgt dat transform en scale goed werken */
@@ -339,7 +339,6 @@ button:hover {
 .uitgelicht {
   padding: 0rem;
   background-color: #f2f2f2;
-  max-width: 1200px;
   border-left: #212121 1px solid;
   margin: 0 auto;
   z-index: 100;
