@@ -6,10 +6,10 @@
       <title>{{ title }}</title>
     {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <link rel="stylesheet" href="/index.css">
     <script src="/index.js" defer></script>
     {% block styles %}
@@ -20,19 +20,22 @@
 
   <body>
     <header>
-        <!-- Logo -->
-      <img
-        class="logo"
-        src="/client/public/images/logo.png"
-        alt="Logo">
+      <!-- Logo -->
+      <a href="/">
+        <img
+          class="logo"
+          src="/client/public/images/logo.png"
+          alt="Logo">
+
+      </a>
 
       <!-- Navigatie -->
       <nav>
         <ul class="menu">
           <!-- Home -->
-          <li>
-            <a href="/">Home</a>
-          </li>
+          {% comment %} <li>
+                        <a href="/">Home</a>
+                    </li> {% endcomment %}
 
           <!-- Straten Dropdown -->
           <li class="dropdown">
@@ -66,10 +69,8 @@
     </header>
     <main>
 
-        {% block content %}
-        {% endblock %}
+      {% block content %}
+      {% endblock %}
     </main>
-    {% comment %} <footer>
-    </footer> {% endcomment %}
   </body>
 </html>

@@ -9,7 +9,17 @@ body {
   overflow-x: visible;
 }
 
+.wrapper-body-street {
+  background: linear-gradient(
+    180deg,
+    var(--color-gray-80) 0%,
+    var(--color-gray-80) 50%,
+    var(--color-gray-20) 100%
+  );
+}
+
 #huis {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +31,6 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  height: 80vh;
   width: max-content;
   animation: street-scroll linear infinite;
 }
@@ -39,6 +48,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.header-street {
+  padding: 2rem 0;
 }
 
 @keyframes street-scroll {
