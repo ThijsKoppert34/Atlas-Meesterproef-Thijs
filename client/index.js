@@ -2,12 +2,14 @@ import "./index.css";
 
 console.log("Hello, world123");
 
+// 🎨 Gele SVG-shapes animeren
 document.addEventListener("DOMContentLoaded", function () {
   const yellowShapes = Array.from(
     document.querySelectorAll(
       'svg [fill="#F9EA3E"], svg [fill="#f9ea3e"], svg .cls-1, svg .cls-2'
     )
   );
+
   yellowShapes.forEach((el) => el.classList.add("yellow-anim"));
 
   for (let i = yellowShapes.length - 1; i > 0; i--) {
@@ -15,19 +17,36 @@ document.addEventListener("DOMContentLoaded", function () {
     [yellowShapes[i], yellowShapes[j]] = [yellowShapes[j], yellowShapes[i]];
   }
 
+  // Check number of houses
+  const wrapper = document.querySelector(".wrapper");
+  const homes = wrapper ? wrapper.querySelectorAll("#huis").length : 0;
+  let duration = 0.5; // fallback
+
+  if (homes === 1) {
+    duration = 20;
+  } else if (homes >= 2 && window.innerWidth >= 1024) {
+    const secondsPerHome = 1.5;
+    const minDuration = 20;
+    const maxDuration = 60;
+    duration = Math.max(minDuration, Math.min(homes * secondsPerHome, maxDuration));
+  } else {
+    duration = 0.5;
+  }
+
   yellowShapes.forEach((shape, i) => {
     setTimeout(() => {
       shape.setAttribute("fill", "#000");
       shape.classList.remove("cls-1", "cls-2");
-    }, i * 500);
+    }, (i * duration * 1000) / yellowShapes.length);
   });
 });
 
+// ⏱ Animatieduur op basis van aantal huizen (alleen desktop)
 window.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".wrapper");
   const homes = wrapper.querySelectorAll("#huis").length;
 
-  if (homes >= 4) {
+  if (homes >= 4 && window.innerWidth >= 1024) {
     const secondsPerHome = 1.5;
     const minDuration = 20;
     const maxDuration = 60;
@@ -36,18 +55,19 @@ window.addEventListener("DOMContentLoaded", () => {
     duration = Math.max(minDuration, Math.min(duration, maxDuration));
 
     wrapper.style.animationDuration = `${duration}s`;
-  } else {
+  } else if (window.innerWidth >= 1024) {
     wrapper.style.animation = "none";
   }
 });
 
+// 🧠 Tooltip functionaliteit voor straatnamen
 const tooltip = document.getElementById("tooltip");
 const links = document.querySelectorAll(".straat-link");
 
 links.forEach((link) => {
   const name = link.dataset.straat;
 
-  link.addEventListener("mouseenter", (e) => {
+  link.addEventListener("mouseenter", () => {
     tooltip.style.display = "block";
     tooltip.textContent = name;
   });
@@ -62,14 +82,31 @@ links.forEach((link) => {
     tooltip.style.left = e.clientX - rect.left + 10 + "px";
     tooltip.style.top = e.clientY - rect.top - 10 + "px";
   });
+
+  link.addEventListener("focus", () => {
+    tooltip.style.display = "block";
+    tooltip.textContent = name;
+
+    const mapWrapper = document.querySelector(".map-wrapper");
+    const rect = mapWrapper.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    tooltip.style.left = linkRect.left - rect.left + 10 + "px";
+    tooltip.style.top = linkRect.top - rect.top - 10 + "px";
+  });
+
+  link.addEventListener("blur", () => {
+    tooltip.style.display = "none";
+  });
 });
 
+// ✍️ SVG animatie via GSAP
 gsap.from('svg[aria-label="introSVG"] path', {
   drawSVG: 0,
   duration: 30,
   ease: "power1.inOut",
 });
 
+// 📚 Story overlay stappen doorlopen
 const steps = document.querySelectorAll(".story-step");
 const overlay = document.getElementById("story-overlay");
 const title = document.querySelector(".story h1");
@@ -107,6 +144,7 @@ document.getElementById("prevBtn").addEventListener("click", () => {
 
 showStep(currentStep);
 
+// 📂 Dropdown-menu functionaliteit
 document.querySelectorAll(".dropbtn").forEach((button) => {
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -131,6 +169,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// 🖥 Overlay-scherm bij eerste bezoek
 window.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".overlay-screen");
   if (localStorage.getItem("overlayShown")) {
@@ -142,4 +181,22 @@ window.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("overlayShown", "true");
     });
   }
+});
+
+document.querySelectorAll(".sidebar-link").forEach((link) => {
+  const straatNaam = link.dataset.straat;
+
+  link.addEventListener("mouseenter", () => {
+    const matchingPath = document.querySelector(
+      `.straat-link[data-straat="${straatNaam}"] .straat-path`
+    );
+    if (matchingPath) matchingPath.classList.add("highlight");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    const matchingPath = document.querySelector(
+      `.straat-link[data-straat="${straatNaam}"] .straat-path`
+    );
+    if (matchingPath) matchingPath.classList.remove("highlight");
+  });
 });

@@ -87,47 +87,49 @@ app.get("/verhaal/:naam", async (req, res) => {
   }
 });
 
-app.get("/:straatnaam/:huisnummer", async (req, res) => {
+app.get("/:straatnaam", async (req, res) => {
+  const straatnaam = req.params.straatnaam;
+
   try {
-    const straatnaam = decodeURIComponent(req.params.straatnaam.trim());
-
-    const huisnummer = parseInt(req.params.huisnummer, 10);
-    const toevoeging = req.params.toevoeging?.trim() || null;
-
-    const [addressRes, personRes] = await Promise.all([
-      fetch(jsonAdress),
-      fetch(jsonPerson),
-    ]);
-
-    const adressen = (await addressRes.json()).data;
-    const personen = (await personRes.json()).data;
-
-    // Zoek het specifieke adres
-    const adres = adressen.find(
-      (adres) =>
-        adres.street?.trim() === straatnaam &&
-        parseInt(adres.house_number, 10) === huisnummer &&
-        (adres.addition?.trim() || "") === (toevoeging || "")
+    const adressenData = await fetch(
+      "https://fdnd-agency.directus.app/items/atlas_address/"
+    );
+    const adressen = await adressenData.json();
+    const huidigAdres = adressen.data.filter(
+      (adres) => adres.street?.trim() === straatnaam
     );
 
-    if (!adres) {
-      return res.status(404).send("Adres niet gevonden");
-    }
-
-    const bewoners = personen.filter(
-      (persoon) => persoon.address_id === adres.id
+    await Promise.all(
+      huidigAdres.map(async (adres) => {
+        const personen = adres.person;
+        if (Array.isArray(personen) && personen.length > 0) {
+          const personenData = await Promise.all(
+            personen.map(async (persoonId) => {
+              const persoonData = await fetch(
+                `https://fdnd-agency.directus.app/items/atlas_person/${persoonId}`
+              );
+              const persoonJson = await persoonData.json();
+              return persoonJson.data;
+            })
+          );
+          adres.last_name = personenData[0]?.last_name || "Onbekend";
+        } else {
+          adres.last_name = "Onbekend";
+        }
+      })
     );
 
-    res.render("detail", {
+    // ➕ hier voeg je bodyClass toe
+    const bodyClass = `straat-${straatnaam.toLowerCase().replace(/\s+/g, "-")}`;
+
+    res.render("street", {
+      huidigAdres,
       straatnaam,
-      huisnummer,
-      toevoeging,
-      adres,
-      bewoners,
+      bodyClass,
     });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Fout bij ophalen van huispagina");
+    res.status(500).send("Fout bij ophalen van API");
   }
 });
 

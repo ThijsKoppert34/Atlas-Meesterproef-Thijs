@@ -9,15 +9,19 @@
 
 
     <div class="sidebar-content">
-      <h3 class="h3">De straten</h3>
+      <div class="sidebarWrapping">
+        <h3>De straten</h3>
+        <p>Hieronder staat de lijst met straten uit de Oosterparkbuurt, kies er een om de verhalen te bekijken.</p>
+      </div>
       <form action="">
         <fieldset>
           <ul>
             {% for straat in straten %}
             <li>
-              <a href="/{{ straat | urlencode }}">{{ straat }}</a>
-            </li>
-            {% endfor %}
+              <a href="/{{ straat | urlencode }}" class="sidebar-link" data-straat="{{ straat }}">
+                {{ straat }}
+              </a>
+            </li>{% endfor %}
           </ul>
         </fieldset>
       </form>
@@ -35,7 +39,10 @@
     <section class="content">
 
       <section class="uitgelicht">
-        <h2 class="titelUitgelicht">Uitgelichte verhalen</h2>
+        <div class="uitlichting">
+          <h2 class="titelUitgelicht">Uitgelichte verhalen</h2>
+          <p>Kies hieronder een van de generieke verhalen van een willekeurig persoon uit de Oosterparkbuurt.</p>
+        </div>
         <ul>
           <li><a href="/verhaal/Leo%20de%20Vries"><span>Leo de Vries</span><img src="/client/SVG/bankmeneer.svg"></a>
           </li>
