@@ -11,7 +11,14 @@
     <div class="sidebar-content">
       <div class="sidebarWrapping">
         <h3>De straten</h3>
-        <p>Hieronder staat de lijst met straten uit de Oosterparkbuurt, kies er een om de verhalen te bekijken.</p>
+        <p>Hieronder staat de lijst met straten uit de Oosterparkbuurt, kies er een om de verhalen te bekijken.
+        </p>
+        <div class="legenda">
+          <svg width="15" height="15">
+            <rect width="20" height="20" fill="#8B0000"></rect>
+          </svg>
+          <p>= uitgebreid verhaal</p>
+        </div>
       </div>
       <form action="">
         <fieldset>
@@ -20,7 +27,7 @@
             <li>
               <a href="/{{ straat | urlencode }}" class="sidebar-link" data-straat="{{ straat }}">
                 {{ straat }}
-              </a>
+                <span class="uitgebreid">3</span></a>
             </li>{% endfor %}
           </ul>
         </fieldset>
@@ -40,16 +47,14 @@
 
       <section class="uitgelicht">
         <div class="uitlichting">
-          <h2 class="titelUitgelicht">Uitgelichte verhalen</h2>
-          <p>Kies hieronder een van de generieke verhalen van een willekeurig persoon uit de Oosterparkbuurt.</p>
+          <h2 class="titelUitgelicht">Uitgebreide verhalen</h2>
+          <p>Kies hieronder een van de uitgebreide verhalen van een persoon uit de Oosterparkbuurt.</p>
         </div>
         <ul>
-          <li><a href="/verhaal/Leo%20de%20Vries"><span>Leo de Vries</span><img src="/client/SVG/bankmeneer.svg"></a>
+          <li><a href="/detail"><span>Leo de Vries</span><img src="/client/SVG/bankmeneer.svg"></a>
           </li>
-          <li><a href="/verhaal/Jozeph%20van%20den%20Bergh"><span>Jozeph van den Bergh</span><img
-                src="/client/SVG/manachterbureau.svg"></a></li>
-          <li><a href="/verhaal/Mozes%20Zurel%20en%20gezin"><span>Mozes Zurel</span><img
-                src="/client/SVG/bakker.svg"></a>
+          <li><a href="/detail"><span>Jozeph van den Bergh</span><img src="/client/SVG/manachterbureau.svg"></a></li>
+          <li><a href="/detail"><span>Mozes Zurel</span><img src="/client/SVG/bakker.svg"></a>
           </li>
         </ul>
 
@@ -213,7 +218,8 @@
           </a>
 
           {% assign tweede_straat = straten[1] %}
-          <a class="link-beuken straat-link" href="/{{ tweede_straat | urlencode }}" data-straat="{{ tweede_straat }}">
+          <a class="link-beuken straat-link" href="/{{ tweede_straat | urlencode }}" data-straat="{{ tweede_straat }}"
+            data-suffix="(8)">
             <path class="straat-path"
               d="M 49.47 58.07 L 49.74 57.97 L 50.09 57.99 L 50.46 58.11 L 50.78 58.30 L 51.05 58.51 L 51.25 58.81 L 53.34 63.62 L 53.55 64.20 L 53.55 64.52 L 53.45 64.88 L 53.28 65.18 L 53.13 65.31 L 53.01 65.37 L 52.76 65.48" />
           </a>

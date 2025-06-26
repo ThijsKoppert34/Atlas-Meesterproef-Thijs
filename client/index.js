@@ -28,9 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const secondsPerHome = 1.5;
     const minDuration = 20;
     const maxDuration = 60;
-    duration = Math.max(minDuration, Math.min(homes * secondsPerHome, maxDuration));
+    duration = Math.max(
+      minDuration,
+      Math.min(homes * secondsPerHome, maxDuration)
+    );
   } else {
-    duration = 0.5;
+    duration = 8;
   }
 
   yellowShapes.forEach((shape, i) => {
@@ -41,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ⏱ Animatieduur op basis van aantal huizen (alleen desktop)
 window.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".wrapper");
   const homes = wrapper.querySelectorAll("#huis").length;
@@ -199,4 +201,53 @@ document.querySelectorAll(".sidebar-link").forEach((link) => {
     );
     if (matchingPath) matchingPath.classList.remove("highlight");
   });
+});
+
+const dropzone = document.getElementById("dragEnDrop");
+const fileInput = document.getElementById("fileInput");
+const uploadBtn = document.getElementById("uploadBtn");
+const fileNameEl = document.getElementById("fileName");
+const previewImg = document.getElementById("previewImg");
+
+function handleFileDisplay(file) {
+  fileNameEl.textContent = `Geselecteerd: ${file.name}`;
+  uploadBtn.style.display = "inline-block";
+
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      previewImg.src = e.target.result;
+      previewImg.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  } else {
+    previewImg.style.display = "none";
+    previewImg.src = "";
+  }
+}
+
+// Bij slepen
+dropzone.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  dropzone.classList.add("dragover");
+});
+
+dropzone.addEventListener("dragleave", () => {
+  dropzone.classList.remove("dragover");
+});
+
+dropzone.addEventListener("drop", (e) => {
+  e.preventDefault();
+  dropzone.classList.remove("dragover");
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    fileInput.files = files;
+    handleFileDisplay(files[0]);
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  if (fileInput.files.length > 0) {
+    handleFileDisplay(fileInput.files[0]);
+  }
 });

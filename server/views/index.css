@@ -225,14 +225,14 @@ footer {
 }
 
 .straat-path {
-  stroke: #f1bd1e;
+  stroke: #2d2d2d;
   fill: none;
   transform-origin: top left;
   transition: stroke 0.3s ease;
 }
 
 .straat-path:hover {
-  stroke: #ffd24b;
+  stroke: #a22525;
 }
 
 .straat-link {
@@ -384,7 +384,7 @@ h1 {
 }
 
 .straat-path.highlight {
-  stroke: #b08400;
+  stroke: #982323;
   stroke-width: 3;
   transition: stroke 0.3s ease, stroke-width 0.3s ease;
 }
@@ -429,6 +429,17 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 1em;
+}
+
+.legenda {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.uitgebreid {
+  font-weight: 500;
+  color: #8b0000;
 }
 
 .uitgelicht img {

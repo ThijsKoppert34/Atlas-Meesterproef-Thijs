@@ -28,6 +28,10 @@ app.get("/overons", (req, res) => {
   res.render("overons");
 });
 
+app.get("/detail", (req, res) => {
+  res.render("detail");
+});
+
 app.use(async (req, res, next) => {
   try {
     const addressRes = await fetch(jsonAdress);

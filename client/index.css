@@ -1,18 +1,18 @@
 /* global styles */
-@import 'reset.css';
+@import "reset.css";
 @import "typography.css";
-@import '../server/views/detail.css';
- 
-/*.layout and view styling */
-@import '../server/layouts/base.css';
-@import '../server/views/index.css';
-@import '../server/views/street.css';
+@import "../server/views/detail.css";
 
- 
+/*.layout and view styling */
+@import "../server/layouts/base.css";
+@import "../server/views/index.css";
+@import "../server/views/street.css";
+@import "../server/views/overons.css";
+
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
- 
+
   --color-gray-10: #111111;
   --color-gray-20: #2d2d2d;
   --color-gray-30: #444444;
@@ -23,11 +23,11 @@
   --color-gray-80: #e0e0e0;
 
   --color-blue: #4682b4;
-  --color-yellow: #F9EA3E;
+  --color-yellow: #f9ea3e;
 }
- 
+
 body {
   color: var(--color-black);
- 
+
   margin: 0 auto;
 }

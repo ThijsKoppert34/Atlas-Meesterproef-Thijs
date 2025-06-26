@@ -1,0 +1,158 @@
+.vierMei {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2rem;
+  padding: 4rem 0 0 0;
+  background-color: #f2f2f2;
+  color: #2d2d2d;
+}
+
+.vierMei-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.overVierMei-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.dragEnDrop {
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.vierMei span {
+  font-size: clamp(0.75rem, 0.6513rem + 0.3947vw, 1.125rem);
+}
+
+.vierMei h1 {
+  text-align: left;
+  font-size: clamp(1.5rem, 1.0066rem + 1.9737vw, 3.375rem);
+  padding: 0 2rem;
+}
+
+.vierMei p {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.75rem, 0.6513rem + 0.3947vw, 1.125rem);
+}
+
+.vierMei h2 {
+  font-size: clamp(0.75rem, 0.4211rem + 1.3158vw, 2rem);
+  font-weight: 400;
+}
+
+.wieZijn,
+.waaromDoen,
+.wieZitten,
+.watDoen,
+.contactOf {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact {
+  font-weight: bold;
+  color: #000000;
+  font-family: "Manrope", sans-serif;
+}
+
+.contactWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dragEnDrop {
+  position: relative;
+  flex: 1 1 300px;
+  max-width: 350px;
+  height: 400px;
+  background-color: #777;
+  border-radius: 12px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.dragEnDrop.dragover {
+  background-color: #555;
+  border: 2px dashed #fff;
+  transition: all 0.3s ease;
+}
+
+.dragEnDrop.dragover p,
+.dragEnDrop.dragover img {
+  opacity: 0.6;
+}
+.dragEnDrop img {
+  width: 40px;
+  margin: 20px 0;
+}
+
+.dragEnDrop input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.herdenking {
+  width: 100vw;
+}
+
+.upload-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: none;
+}
+
+.upload-btn:hover {
+  background-color: #eee;
+}
+
+.preview {
+  margin-top: 15px;
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.file-name {
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .vierMei-content {
+    flex-direction: column;
+  }
+
+  .dragEnDrop {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .overVierMei-wrapper {
+    width: 100%;
+  }
+}

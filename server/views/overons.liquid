@@ -2,10 +2,85 @@
 
 {% block content %}
 
-<div>
-    <h1>Wij zijn team Soldaat van Oost</h1>
-    <h2>Mischa, Joost, Christian & Thijs. Vier studenten die de minor Web Design & Development volgen en dit is ons
-        eindproject.</h2>
+<a href="/"><svg class="pijltje" enable-background="new 0 0 512 512" fill="#2d2d2d" viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg">
+        <g id="_x31_0_Left">
+            <g>
+                <path
+                    d="m335.3 6.404h-158.6c-93.896 0-170.296 76.4-170.296 170.296v158.6c0 93.896 76.4 170.296 170.296 170.296h158.6c93.896 0 170.296-76.4 170.296-170.296v-158.6c0-93.896-76.4-170.296-170.296-170.296zm.856 384.663c4.612 4.659 4.612 12.171 0 16.83-2.33 2.33-5.372 3.47-8.415 3.47s-6.086-1.141-8.415-3.47l-143.482-143.482c-4.612-4.659-4.612-12.171 0-16.83l143.482-143.482c4.659-4.611 12.171-4.611 16.83 0 4.612 4.659 4.612 12.171 0 16.83l-135.067 135.067z" />
+            </g>
+        </g>
+        <g id="Layer_1" />
+    </svg></a>
+
+<div class="vierMei">
+    <h1>Het 4 mei comité</h1>
+    <div class="vierMei-content">
+        <div class="overVierMei-wrapper">
+            <div class="wieZijn">
+                <h2>Wie zijn wij?</h2>
+                <p>Het 4 mei comité van de Oosterparkbuurt is een groep mensen uit de buurt die zich inzet om de
+                    verhalen
+                    van de
+                    oorlog
+                    levend te houden. Wij vinden het belangrijk om stil te staan bij de oorlog, vrijheid, en wat dat
+                    vandaag
+                    de
+                    dag
+                    voor ons
+                    betekent.</p>
+            </div>
+            <div class="watDoen">
+                <h2>Wat doen wij?</h2>
+                <p>Elk jaar organiseren we op 4 mei een herdenking in de Oosterparkbuurt. Daarnaast verzamelen we
+                    verhalen
+                    van
+                    buurtbewoners die de oorlog hebben meegemaakt en delen we deze via deze website, zodat jong en oud
+                    kunnen
+                    leren over het
+                    verleden.</p>
+            </div>
+            <div class="waaromDoen">
+                <h2>Waarom doen we dit?</h2>
+                <p>Vrijheid lijkt vanzelfsprekend, maar dat is het niet altijd geweest. Met onze projecten willen we
+                    laten
+                    zien
+                    wat er in
+                    de oorlog is gebeurd, zodat we dit niet vergeten. Zo bouwen we aan bewustwording, begrip en
+                    verbondenheid in
+                    de buurt.</p>
+            </div>
+            <div class="wieZitten">
+                <h2>Wie zitten er in het comité?</h2>
+                <p>Het comité bestaat uit vrijwilligers uit de buurt: jongeren, ouderen, leraren en betrokken bewoners.
+                    Samen
+                    zorgen wij
+                    ervoor dat herdenken ieder jaar mogelijk is.</p>
+            </div>
+            <div class="contactOf">
+                <h2>Contact of meedoen</h2>
+                <p>Wil je meehelpen of heb je een verhaal dat je wilt delen? Neem dan contact met ons op via</p>
+                <div class="contactWrapper"><span class="contact">contact@4meicomite.nl</span> of app naar <span
+                        class="contact">+ 31 6 58 47 36 29</span></div>
+            </div>
+        </div>
+
+
+        <div class="dragEnDrop" id="dragEnDrop">
+            <p>Documenten waar je ons mee kan helpen?<br>Kies een bestand of sleep hier in</p>
+            <img src="/client/SVG/uploadfile.svg" alt="upload icon">
+            <input type="file" id="fileInput" />
+            <button class="upload-btn" id="uploadBtn">Upload</button>
+
+            <div class="preview" id="preview">
+                <p class="file-name" id="fileName"></p>
+                <img id="previewImg" style="display:none; max-width: 100%; margin-top: 10px;" />
+            </div>
+        </div>
+    </div>
 </div>
+
+<img class="herdenking" src="/client/public/images/herdenkingoosterpark.jpg" alt="Herdenking op 4 mei bij oosterpark">
+
 
 {% endblock %}

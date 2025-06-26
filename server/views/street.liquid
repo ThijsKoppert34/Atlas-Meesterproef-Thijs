@@ -2,11 +2,23 @@
 
 {% block content %}
 
-<a href="/">Terug naar home</a>
+
+<a href="/"><svg class="pijltje" enable-background="new 0 0 512 512" fill="" viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="_x31_0_Left">
+      <g>
+        <path
+          d="m335.3 6.404h-158.6c-93.896 0-170.296 76.4-170.296 170.296v158.6c0 93.896 76.4 170.296 170.296 170.296h158.6c93.896 0 170.296-76.4 170.296-170.296v-158.6c0-93.896-76.4-170.296-170.296-170.296zm.856 384.663c4.612 4.659 4.612 12.171 0 16.83-2.33 2.33-5.372 3.47-8.415 3.47s-6.086-1.141-8.415-3.47l-143.482-143.482c-4.612-4.659-4.612-12.171 0-16.83l143.482-143.482c4.659-4.611 12.171-4.611 16.83 0 4.612 4.659 4.612 12.171 0 16.83l-135.067 135.067z" />
+      </g>
+    </g>
+    <g id="Layer_1" />
+  </svg></a>
 
 <div class="bovenaanPagina">
   <h1 class="header-street">{{ straatnaam }}</h1>
+  {% if huidigAdres.size >= 3 %}
   <h4>Scroll ← ← ←</h4>
+  {% endif %}
 </div>
 
 <div class="wrapper-body-street">
@@ -14,7 +26,7 @@
   <section class="wrapper">
     {% for adres in huidigAdres %}
 
-    <a id="huis" class="home-{{ forloop.index }}" href="/{{ adres.street }}/{{ adres.house_number }}">
+    <a id="huis" class="home-{{ forloop.index }}" href="/detail">
 
 
       <section class="text-wrapper">

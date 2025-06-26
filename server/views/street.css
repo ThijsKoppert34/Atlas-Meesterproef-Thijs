@@ -9,39 +9,46 @@ body {
   overflow-x: hidden;
 }
 
+body.straat-vrolikstraat,
+body.straat-beukenweg,
+body.straat-derde-oosterparkstraat,
+body.straat-tweede-oosterparkstraat,
+body.straat-eikenweg,
+body.straat-boerhaaveplein,
+body.straat-oosterpark,
+body.straat-camperstraat,
+body.straat-kastanjeplein {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 body.straat-vrolikstraat {
   background-image: url("/client/public/images/vrolikstraatoorlog.jpg");
-  background-size: cover; /* of: contain, of: auto */
-  background-repeat: no-repeat;
-  background-position: center;
 }
-
 body.straat-beukenweg {
   background-image: url("/client/public/images/beukenwegoorlog.jpg");
-  background-size: cover; /* of: contain, of: auto */
-  background-repeat: no-repeat;
-  background-position: center;
 }
-
 body.straat-derde-oosterparkstraat {
   background-image: url("/client/public/images/derdeoostoorlog.jpg");
-  background-size: cover; /* of: contain, of: auto */
-  background-repeat: no-repeat;
-  background-position: center;
 }
-
 body.straat-tweede-oosterparkstraat {
   background-image: url("/client/public/images/tweedeoostoorlog.jpg");
-  background-size: cover; /* of: contain, of: auto */
-  background-repeat: no-repeat;
-  background-position: center;
 }
-
 body.straat-eikenweg {
   background-image: url("/client/public/images/eikenwegoorlog.jpg");
-  background-size: cover; /* of: contain, of: auto */
-  background-repeat: no-repeat;
-  background-position: center;
+}
+body.straat-boerhaaveplein {
+  background-image: url("/client/public/images/boerhaavepleinoorlog.jpg");
+}
+body.straat-oosterpark {
+  background-image: url("/client/public/images/oosterparkoorlog.jpg");
+}
+body.straat-camperstraat {
+  background-image: url("/client/public/images/camperstraatoorlog.jpg");
+}
+body.straat-kastanjeplein {
+  background-image: url("/client/public/images/kastanjepleinoorlog.jpeg");
 }
 
 .wrapper-body-street {
@@ -88,16 +95,40 @@ body.straat-eikenweg {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  padding: 0.3rem;
+
+  @supports (backdrop-filter: blur(5px)) {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.header-street {
+  font-size: clamp(2.125rem, 1.9605rem + 0.6579vw, 2.75rem);
 }
 
 .bovenaanPagina {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   gap: 1.5rem;
+}
+
+.pijltje {
+  position: absolute;
+  left: 2rem;
+  top: 5.5rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 999;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 .footer-street {
@@ -150,6 +181,14 @@ body.straat-eikenweg {
 
   .header-street {
     padding: none;
+  }
+
+  .pijltje {
+    position: absolute;
+    left: 1rem;
+    top: 5.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .bovenaanPagina h4 {
