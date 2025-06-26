@@ -300,8 +300,11 @@ h1 {
 }
 
 .story {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   z-index: 1;
-  max-width: 40em;
+  max-width: 50em;
   text-align: center;
   color: white;
 }
@@ -320,7 +323,6 @@ h1 {
 }
 
 .button-container {
-  margin-top: 1em;
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -328,10 +330,10 @@ h1 {
 
 .button-container button {
   padding: 14px 28px;
-  background-color: #212121;
-  color: white;
+  background-color: #f2f2f2;
+  color: #8b0000;
   font-size: 1.1em;
-  border: 2px solid #f1bd1e;
+  border: 2px solid #8b0000;
   border-radius: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -340,8 +342,8 @@ h1 {
 }
 
 .button-container button:hover {
-  background-color: #333333;
-  color: #f1bd1e;
+  background-color: #8b0000;
+  color: #f2f2f2;
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -429,6 +431,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 1em;
+  font-size: clamp(0.875rem, 0.7763rem + 0.3947vw, 1.25rem);
 }
 
 .legenda {
@@ -446,6 +449,26 @@ h1 {
   width: 4rem;
   height: 4rem;
   object-fit: contain;
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 0;
+  background-color: #8b0000;
+  transition: width 0.3s ease;
+}
+
+.hoverLine:hover .underline::after {
+  width: 100%;
 }
 
 /* Responsive: op mobiel onder elkaar */

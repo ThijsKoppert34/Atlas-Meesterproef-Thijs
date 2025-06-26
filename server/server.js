@@ -32,6 +32,10 @@ app.get("/detail", (req, res) => {
   res.render("detail");
 });
 
+app.get("/generic", (req, res) => {
+  res.render("generic");
+});
+
 app.use(async (req, res, next) => {
   try {
     const addressRes = await fetch(jsonAdress);
